@@ -37,7 +37,7 @@
                            <JFXButton fx:id="backButton" alignment="CENTER" text="Zpět" />
                         </children>
                      </VBox>
-                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1" />
+                     <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1" />
                   </children>
                </GridPane>
             </children></AnchorPane>

@@ -8,16 +8,26 @@ import javafx.stage.Stage;
 
 public class Calendar extends Application {
 
+    private static String name;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("calendar.fxml"));
         primaryStage.setTitle("Kidary");
-        primaryStage.setScene(new Scene(root, 1100, 700));
+        primaryStage.setScene(new Scene(root, 1300, 850));
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static String getMyVariable() {
+        return name;
+    }
+
+    public static void setMyVariable(String myVariable) {
+        Calendar.name = myVariable;
     }
 }

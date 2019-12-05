@@ -5,19 +5,26 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class manageCalendarController {
+import static calendar.Calendar.setMyVariable;
+
+public class manageCalendarController implements Initializable {
     @FXML
     public JFXButton add;
     @FXML
     public JFXButton Petr;
 
-    public void initialize() throws IOException {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         add.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -36,6 +43,7 @@ public class manageCalendarController {
         Petr.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                setMyVariable("Petr");
                 Stage stage = (Stage) Petr.getScene().getWindow();
                 try {
                     getViewMonthCalendar(stage);
@@ -48,7 +56,7 @@ public class manageCalendarController {
 
     private void getViewMonthCalendar(Stage window) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("weekCalendar.fxml"));
-        window.setScene(new Scene(root, 1100 ,700));
+        window.setScene(new Scene(root, 1300 ,850));
         window.setTitle("Kidary");
         window.show();
     }

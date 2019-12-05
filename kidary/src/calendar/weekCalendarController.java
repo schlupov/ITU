@@ -1,23 +1,26 @@
 package calendar;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXColorPicker;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class weekCalendarController {
+public class weekCalendarController  implements Initializable {
 
     @FXML
     public GridPane bodyPane;
@@ -39,11 +42,18 @@ public class weekCalendarController {
     public GridPane sunday;
     @FXML
     public JFXButton backButton;
+    @FXML
+    public Label labelName;
 
 
-    public void initialize() throws IOException {
-        bodyPane.setHgap(3); //horizontal gap in pixels
-        bodyPane.setVgap(3); //vertical gap in pixels
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // nastavi jmeno na Petr, pokud uzivatel kliknul na tlacitko Petr
+        labelName.setText(labelName.getText() + Calendar.getMyVariable());
+        labelName.setStyle("-fx-font-family: 'Helvetica', Arial, sans-serif; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 24px");
+
+        bodyPane.setHgap(3);
+        bodyPane.setVgap(3);
         bodyPane.setPadding(new Insets(3, 3, 3, 3));
 
         for (int i = 0; i < 2; i++) {
@@ -52,10 +62,13 @@ public class weekCalendarController {
                     VBox day = new VBox();
                     String whichDayInWeek = getDay(j);
                     Label label = new Label(whichDayInWeek);
+                    label.setStyle("-fx-text-fill: white;");
+                    day.setPrefHeight(20);
+                    day.setMaxHeight(30);
                     day.setStyle("-fx-background-color: #6C7B8B; -fx-min-height: 50px;");
                     day.getChildren().add(label);
-                    bodyPane.add(day, j,i);
                     day.setAlignment(Pos.CENTER);
+                    bodyPane.add(day, j,i);
                 }
             }
         }
@@ -91,6 +104,7 @@ public class weekCalendarController {
                 break;
         }
         Label label = new Label(subject);
+        label.setStyle("-fx-text-fill: white;");
         event.getChildren().add(label);
         event.setAlignment(Pos.CENTER);
         gridPane.add(event, 0,time);
@@ -118,9 +132,8 @@ public class weekCalendarController {
 
     private void goBack(Stage window) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("calendarDetail.fxml"));
-        window.setScene(new Scene(root, 1100 ,700));
+        window.setScene(new Scene(root, 1300 ,850));
         window.setTitle("Kidary");
         window.show();
     }
-
 }
