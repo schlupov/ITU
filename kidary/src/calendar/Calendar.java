@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class Calendar extends Application {
 
     private static String name;
+    private static String eventName;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -25,6 +26,14 @@ public class Calendar extends Application {
 
     public static String getMyVariable() {
         return name;
+    }
+
+    public static String getEventName() {
+        return eventName;
+    }
+
+    public static void setEventName(String eventName) {
+        Calendar.eventName = eventName;
     }
 
     public static void setMyVariable(String myVariable) {

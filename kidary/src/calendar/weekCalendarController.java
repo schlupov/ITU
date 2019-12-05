@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static calendar.Calendar.setEventName;
+import static calendar.Calendar.setMyVariable;
+
 public class weekCalendarController  implements Initializable {
 
     @FXML
@@ -92,22 +95,34 @@ public class weekCalendarController  implements Initializable {
     }
 
     private void addEvent(GridPane gridPane, int time, String subject) {
-        VBox event = new VBox();
-        event.setSpacing(8);
-        event.setPadding(new Insets(5, 5, 5, 5));
+        VBox calendarEvent = new VBox();
+        calendarEvent.setSpacing(8);
+        calendarEvent.setPadding(new Insets(5, 5, 5, 5));
         switch (subject) {
             case "Angličtina":
-                event.setStyle("-fx-background-color: #DB2645; -fx-background-radius: 20px;");
+                calendarEvent.setStyle("-fx-background-color: #DB2645; -fx-background-radius: 20px;");
                 break;
             case "Matematika":
-                event.setStyle("-fx-background-color: #4CBB17; -fx-background-radius: 20px;");
+                calendarEvent.setStyle("-fx-background-color: #4CBB17; -fx-background-radius: 20px;");
                 break;
         }
         Label label = new Label(subject);
         label.setStyle("-fx-text-fill: white;");
-        event.getChildren().add(label);
-        event.setAlignment(Pos.CENTER);
-        gridPane.add(event, 0,time);
+        calendarEvent.getChildren().add(label);
+        calendarEvent.setAlignment(Pos.CENTER);
+        calendarEvent.setOnMouseClicked( event -> {
+            setEventName(subject);
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("eventDetail.fxml"));
+                Stage window = new Stage();
+                window.setTitle("Kidary");
+                window.setScene(new Scene(root, 350, 430));
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        gridPane.add(calendarEvent, 0,time);
     }
 
     private String getDay(int numberOfDayInWeek) {

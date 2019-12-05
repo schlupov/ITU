@@ -58,3 +58,11 @@
 #monday, #tuesday, #wednesday, #thursday, #friday, #saturday, #sunday {
     -fx-background-color: #E8E8E8;
 }
+
+#topHboxEventDetail {
+    -fx-background-color: #5D8CAE;
+}
+
+#paneEventDetail {
+    -fx-background-color: #E8E8E8;
+}
