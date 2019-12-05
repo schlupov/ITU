@@ -1,0 +1,52 @@
+#loginCentralPane {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #5D8CAE, #317589);
+}
+
+#username {
+    -fx-background-image: url("pictures/icons8-user-50.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center;
+    -fx-background-size: 30px;
+    -fx-font-size: 20;
+}
+
+#password {
+    -fx-background-image: url("pictures/icons8-key-64.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center;
+    -fx-background-size: 30px;
+    -fx-font-size: 20;
+}
+
+#PaneWelcome {
+    -fx-background-color: #5D8CAE;
+}
+
+#add {
+    -jfx-button-type: FLAT;
+    -fx-background-color: rgb(77,102,204);
+    -fx-text-fill: WHITE;
+    -fx-background-radius: 20px;
+}
+
+#Laura, #Petr, #Nina, #loginButton {
+    -jfx-button-type: RAISED;
+    -fx-background-color: rgb(77,102,204);
+    -fx-text-fill: WHITE;
+}
+
+#newCalendarPane {
+    -fx-background-color: #5D8CAE;
+}
+
+#createButton {
+    -jfx-button-type: RAISED;
+    -fx-background-color: #5D8CAE;
+    -fx-text-fill: WHITE;
+}
+
+#drop {
+    -jfx-button-type: RAISED;
+    -fx-background-color: crimson;
+    -fx-text-fill: WHITE;
+}
