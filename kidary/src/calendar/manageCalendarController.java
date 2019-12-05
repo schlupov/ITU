@@ -47,7 +47,7 @@ public class manageCalendarController {
     }
 
     private void getViewMonthCalendar(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("monthCalendar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("weekCalendar.fxml"));
         window.setScene(new Scene(root, 1100 ,700));
         window.setTitle("Kidary");
         window.show();

@@ -29,7 +29,7 @@
     -fx-background-radius: 20px;
 }
 
-#Laura, #Petr, #Nina, #loginButton {
+#Laura, #Petr, #Nina, #loginButton, #newEvent, #contacts, #backButton {
     -jfx-button-type: RAISED;
     -fx-background-color: rgb(77,102,204);
     -fx-text-fill: WHITE;
@@ -49,4 +49,12 @@
     -jfx-button-type: RAISED;
     -fx-background-color: crimson;
     -fx-text-fill: WHITE;
+}
+
+#leftGridPaneCalendar {
+    -fx-background-color: #5D8CAE;
+}
+
+#monday, #tuesday, #wednesday, #thursday, #friday, #saturday, #sunday {
+    -fx-background-color: #E8E8E8;
 }
