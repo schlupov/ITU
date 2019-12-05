@@ -47,6 +47,8 @@ public class weekCalendarController  implements Initializable {
     public JFXButton backButton;
     @FXML
     public Label labelName;
+    @FXML
+    public JFXButton newEvent;
 
 
     @Override
@@ -87,6 +89,17 @@ public class weekCalendarController  implements Initializable {
                 Stage stage = (Stage) backButton.getScene().getWindow();
                 try {
                     goBack(stage);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        newEvent.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = (Stage) backButton.getScene().getWindow();
+                try {
+                    newEvent(stage);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -148,6 +161,13 @@ public class weekCalendarController  implements Initializable {
     private void goBack(Stage window) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("calendarDetail.fxml"));
         window.setScene(new Scene(root, 1300 ,850));
+        window.setTitle("Kidary");
+        window.show();
+    }
+
+    private void newEvent(Stage window) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("newEvent.fxml"));
+        window.setScene(new Scene(root, 650 ,850));
         window.setTitle("Kidary");
         window.show();
     }
