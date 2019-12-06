@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="850.0" prefWidth="1300.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.LoginController">
+<VBox prefHeight="500.0" prefWidth="800.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.LoginController">
     <AnchorPane VBox.vgrow="ALWAYS">
        <Pane id="loginCentralPane" fx:id="loginCentralPane" layoutY="-2.0" prefHeight="850.0" prefWidth="1300.0" stylesheets="@../css/calendar.css">
          <JFXTextField fx:id="username" layoutX="540.0" layoutY="407.0" />

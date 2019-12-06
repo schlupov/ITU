@@ -29,17 +29,59 @@
     -fx-background-radius: 20px;
 }
 
-#Laura, #Petr, #Nina, #loginButton, #newEvent, #contacts, #backButton {
-    -jfx-button-type: RAISED;
+#Laura, #Petr, #Nina {
+    -jfx-button-type: FLAT;
     -fx-background-color: #F5F4EF;
     -fx-text-fill: BLACK;
     -fx-font-size: 30px;
 }
 
-#newEvent, #contacts, #backButton {
-    -jfx-button-type: RAISED;
-    -fx-background-color: #F5F4EF;
+#showAll {
+    -jfx-button-type: FLAT;
     -fx-text-fill: BLACK;
+    -fx-font-size: 20px;
+}
+
+#birthdayText, #namedayText {
+    -fx-border-color: #2CA58D;
+}
+
+#contacts, #backButton, #messenger {
+    -jfx-button-type: FLAT;
+    -fx-text-fill: BLACK;
+    -fx-font-size: 16px;
+    -fx-text-aligment: right;
+}
+
+#contacts {
+    -fx-background-image: url("pictures/contacts.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 30px;
+}
+
+#backButton {
+    -fx-background-image: url("pictures/backarrow.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 30px;
+}
+
+#messenger {
+    -fx-background-image: url("pictures/messages.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 30px;
+}
+
+#newEvent {
+    -jfx-button-type: FLAT;
+    -fx-text-fill: WHITE;
+    -fx-font-size: 16px;
+    -fx-background-image: url("pictures/plus.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 30px;
 }
 
 #newCalendarPane {
@@ -65,7 +107,7 @@
 }
 
 #leftGridPaneCalendar {
-    -fx-background-color: #5D8CAE;
+    -fx-background-color: #2CA58D;
 }
 
 #monday, #tuesday, #wednesday, #thursday, #friday, #saturday, #sunday {
