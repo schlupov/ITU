@@ -37,51 +37,70 @@
                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                  </columnConstraints>
                  <rowConstraints>
-                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="51.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="72.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="135.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="5.0" prefHeight="5.0" valignment="CENTER" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="49.0" minHeight="5.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="120.0" minHeight="5.0" prefHeight="120.0" vgrow="SOMETIMES" />
                  </rowConstraints>
                   <children>
                      <JFXClippedPane>
                         <children>
-                           <Pane prefHeight="200.0" prefWidth="200.0">
+                           <Pane minHeight="-Infinity">
                               <children>
-                                 <Label layoutX="83.0" layoutY="20.0" text="Datum" />
-                                 <Label layoutX="200.0" layoutY="20.0" text="5.10.2020" />
+                                 <Label layoutX="113.0" layoutY="29.0" text="Datum:">
+                                    <font>
+                                       <Font name="Cantarell Extra Bold" size="13.0" />
+                                    </font></Label>
+                                 <Label layoutX="175.0" layoutY="28.0" text="5.10.2020" />
                               </children>
                            </Pane>
                         </children>
                      </JFXClippedPane>
-                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <Pane prefHeight="20.0" prefWidth="200.0" GridPane.rowIndex="1">
                         <children>
-                           <Label layoutX="76.0" layoutY="20.0" text="Začátek" />
-                           <Label layoutX="203.0" layoutY="20.0" text="08:00" />
+                           <Label layoutX="107.0" layoutY="20.0" text="Začátek:">
+                              <font>
+                                 <Font name="Cantarell Extra Bold" size="13.0" />
+                              </font></Label>
+                           <Label layoutX="175.0" layoutY="20.0" text="08:00" />
                         </children>
                      </Pane>
-                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <Pane prefHeight="20.0" prefWidth="200.0" GridPane.rowIndex="2">
                         <children>
-                           <Label layoutX="90.0" layoutY="25.0" text="Konec" />
-                           <Label layoutX="202.0" layoutY="25.0" text="09:30" />
+                           <Label layoutX="116.0" layoutY="17.0" text="Konec:">
+                              <font>
+                                 <Font name="Cantarell Extra Bold" size="13.0" />
+                              </font></Label>
+                           <Label layoutX="175.0" layoutY="16.0" text="09:30" />
                         </children>
                      </Pane>
-                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <Pane prefHeight="20.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                         <children>
-                           <Label layoutX="94.0" layoutY="25.0" text="Místo" />
-                           <Label layoutX="204.0" layoutY="25.0" text="Lidická 50, Brno" />
+                           <Label layoutX="117.0" layoutY="12.0" text="Místo:">
+                              <font>
+                                 <Font name="Cantarell Extra Bold" size="13.0" />
+                              </font></Label>
+                           <Label alignment="CENTER" layoutX="175.0" layoutY="12.0" text="Lidická 50, Brno" />
                         </children>
                      </Pane>
                      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
                         <children>
-                           <Label layoutX="32.0" layoutY="20.0" text="Poznámka: vzít nový sešit" />
+                           <Label layoutX="32.0" layoutY="20.0" text="Poznámka: ">
+                              <font>
+                                 <Font name="Cantarell Extra Bold" size="13.0" />
+                              </font></Label>
+                           <Label layoutX="102.0" layoutY="20.0" text="vzít nový sešit" />
                         </children>
                      </Pane>
-                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <Pane prefHeight="25.0" prefWidth="350.0" GridPane.rowIndex="4">
                         <children>
-                           <Label layoutX="107.0" layoutY="20.0" text="Typ" />
-                           <Label layoutX="204.0" layoutY="20.0" text="běžná rutina" />
+                           <Label layoutX="129.0" layoutY="6.0" text="Typ:">
+                              <font>
+                                 <Font name="Cantarell Extra Bold" size="13.0" />
+                              </font></Label>
+                           <Label layoutX="175.0" layoutY="5.0" text="běžná rutina" />
                         </children>
                      </Pane>
                   </children>

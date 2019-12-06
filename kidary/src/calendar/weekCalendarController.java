@@ -4,8 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -69,11 +71,14 @@ public class weekCalendarController implements Initializable {
         for (int t = 0 ; t<24; t++) {
 
             String text = String.valueOf(t) + ":00";
-            calendarGrid.add(new Label(text), 0,t);
+            Label label = new Label(text);
+            calendarGrid.add(label, 0,t);
+            GridPane.setHalignment(label, HPos.CENTER);
+            GridPane.setValignment(label, VPos.TOP);
         }
 
         addEvent(calendarGrid, 0, 8, "Angličtina");
-        addEvent(calendarGrid, 1,12, "Matematika");
+        addEvent(calendarGrid, 1,8, "Matematika");
         //addEvent(calendarGrid, 1,23, "Matematika");
 
         leftTopVBoxCalendar.setSpacing(8);

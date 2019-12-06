@@ -53,15 +53,29 @@
     -fx-text-aligment: right;
 }
 
-#weekForward, #right {
+#weekForward {
     -fx-background-image: url("pictures/arrow-icon-28.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: left center;
     -fx-background-size: 55px;
 }
 
-#weekBack, #left {
+#right {
+    -fx-background-image: url("pictures/white-down-arrow-png-right.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 55px;
+}
+
+#weekBack {
     -fx-background-image: url("pictures/arrow-back.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 55px;
+}
+
+#left {
+    -fx-background-image: url("pictures/white-down-arrow-png-2.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: left center;
     -fx-background-size: 55px;
@@ -151,6 +165,6 @@
     -fx-background-color: #2CA58D;
 }
 
-#hboxNewEventTop {
+#hboxNewEventTop, #messagesMobilePanel, #messagesChildCalPanel, #topHboxEventDetail {
     -fx-background-color: #2CA58D;
 }

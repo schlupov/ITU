@@ -37,18 +37,18 @@
                 <bottom>
                     <Pane prefHeight="69.0" prefWidth="700.0" BorderPane.alignment="CENTER">
                         <children>
-                            <JFXButton fx:id="buttonCreate" layoutX="471.0" layoutY="22.0" text="Vytvořit" />
+                            <JFXButton fx:id="buttonCreate" layoutX="471.0" layoutY="6.0" prefHeight="53.0" prefWidth="142.0" text="Vytvořit" />
                             <!--<JFXButton fx:id="drop" layoutX="567.0" layoutY="22.0" text="Zahodit" />-->
                         </children>
                     </Pane>
                 </bottom>
                <center>
-                  <GridPane fx:id="bodyGrid" BorderPane.alignment="CENTER">
+                  <GridPane fx:id="bodyGrid" alignment="CENTER" BorderPane.alignment="CENTER">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
@@ -61,10 +61,22 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Jméno" />
-                        <Label text="Příjmení" GridPane.columnIndex="1" />
-                        <Label text="telefon" GridPane.columnIndex="2" />
-                        <Label text="E-mail" GridPane.columnIndex="3" />
+                        <Label text="Jméno">
+                           <font>
+                              <Font name="Cantarell Extra Bold" size="22.0" />
+                           </font></Label>
+                        <Label text="Příjmení" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Cantarell Extra Bold" size="22.0" />
+                           </font></Label>
+                        <Label text="Telefon" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Cantarell Extra Bold" size="22.0" />
+                           </font></Label>
+                        <Label text="E-mail" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="Cantarell Extra Bold" size="22.0" />
+                           </font></Label>
                      </children>
                   </GridPane>
                </center>
