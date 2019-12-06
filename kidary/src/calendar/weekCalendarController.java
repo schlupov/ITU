@@ -104,13 +104,14 @@ public class weekCalendarController implements Initializable {
             }
             for (int t = 0 ; t<24; t++) {
 
-                String text = String.valueOf(t+1) + ":00";
+                String text = String.valueOf(t) + ":00";
                 calendarGrid.add(new Label(text), 0,t);
             }
         }
 
-        addEvent(calendarGrid, 0, 2, "Angličtina");
-        addEvent(calendarGrid, 1,8, "Matematika");
+        addEvent(calendarGrid, 0, 8, "Angličtina");
+        addEvent(calendarGrid, 1,12, "Matematika");
+        addEvent(calendarGrid, 1,23, "Matematika");
 
         leftTopVBoxCalendar.setSpacing(8);
 
@@ -186,7 +187,7 @@ public class weekCalendarController implements Initializable {
                 e.printStackTrace();
             }
         });
-        gridPane.add(calendarEvent, day+1, time);
+        gridPane.add(calendarEvent, day+1, time, 1 , 2);
     }
 
     private String getDay(int numberOfDayInWeek) {
