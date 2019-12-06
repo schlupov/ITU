@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="900.0" prefWidth="650.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.messengerController">
+<VBox prefHeight="700.0" prefWidth="400.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.childMessengerController">
    <children>
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
@@ -23,6 +23,7 @@
                               <Font name="DejaVu Sans Mono Bold" size="26.0" />
                            </font>
                         </Label>
+                        <JFXButton fx:id="buttonBack" layoutX="25.0" layoutY="22.0" text="Zpět" />
                      </children>
                   </HBox>
                </top>
@@ -32,12 +33,7 @@
                <bottom>
                   <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXTextField prefHeight="103.0" prefWidth="650.0" />
-                        <Pane prefHeight="69.0" prefWidth="700.0">
-                           <children>
-                              <JFXButton fx:id="buttonBack" layoutX="25.0" layoutY="22.0" text="Zpět" />
-                           </children>
-                        </Pane>
+                        <JFXTextField/>
                      </children>
                   </VBox>
                </bottom>
