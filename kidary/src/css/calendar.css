@@ -131,3 +131,11 @@
     -fx-background-color: rgb(77,102,204);
     -fx-text-fill: WHITE;
 }
+
+#buttonBack {
+    -fx-background-image: url("pictures/backarrow.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 30px;
+    -fx-background-color: #84BC9C;
+}
