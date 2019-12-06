@@ -139,6 +139,20 @@
                                     </GridPane>
                                  </content>
                               </ScrollPane>
+                              <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <JFXButton fx:id="weekBack" prefHeight="55.0" prefWidth="55.0" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+                                    <JFXButton fx:id="weekForward" prefHeight="55.0" prefWidth="55.0" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+                                 </children>
+                              </GridPane>
                            </children>
                         </GridPane>
                      </children>

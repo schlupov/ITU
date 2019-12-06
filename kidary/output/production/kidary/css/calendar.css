@@ -53,6 +53,20 @@
     -fx-text-aligment: right;
 }
 
+#weekForward {
+    -fx-background-image: url("pictures/arrow-icon-28.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 55px;
+}
+
+#weekBack {
+    -fx-background-image: url("pictures/arrow-back.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 55px;
+}
+
 #contacts {
     -fx-background-image: url("pictures/contacts.png");
     -fx-background-repeat: no-repeat;
@@ -126,16 +140,18 @@
     -fx-background-color: #5D8CAE;
 }
 
-#buttonBack, #buttonCreate {
+#buttonBack, #buttonSend, #buttonCreate {
     -jfx-button-type: RAISED;
-    -fx-background-color: rgb(77,102,204);
+    -fx-background-color: #84BC9C;
+    -fx-font-size: 18px;
     -fx-text-fill: WHITE;
 }
 
-#buttonBack {
-    -fx-background-image: url("pictures/backarrow.png");
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: left center;
-    -fx-background-size: 30px;
-    -fx-background-color: #84BC9C;
+#hboxNewEventTop {
+    -fx-background-color: #2CA58D;
+}
+
+#messageTextField {
+  -fx-text-box-border: red ;
+  -fx-focus-color: red ;
 }
