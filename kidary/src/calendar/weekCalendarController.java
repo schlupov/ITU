@@ -1,8 +1,6 @@
 package calendar;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,20 +8,19 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import static calendar.Calendar.setEventName;
-import static calendar.Calendar.setMyVariable;
 
-public class weekCalendarController  implements Initializable {
+public class weekCalendarController implements Initializable {
 
     @FXML
     public GridPane bodyPane;
@@ -49,6 +46,10 @@ public class weekCalendarController  implements Initializable {
     public Label labelName;
     @FXML
     public JFXButton newEvent;
+    @FXML
+    public JFXButton contacts;
+    @FXML
+    public JFXButton messenger;
 
 
     @Override
@@ -62,8 +63,20 @@ public class weekCalendarController  implements Initializable {
         bodyPane.setPadding(new Insets(3, 3, 3, 3));
 
         for (int i = 0; i < 2; i++) {
-            for (int j = 0; j <7; j++) {
+
+            LocalDate today = LocalDate.now();
+
+            LocalDate monday = today;
+            while (monday.getDayOfWeek() != DayOfWeek.MONDAY) {
+                monday = monday.minusDays(1);
+            }
+
+            for (int j = 0; j < 7; j++) {
                 if (i == 0) {
+
+                    Label dateLabel = new Label(monday.toString());
+                    dateLabel.setStyle("-fx-text-fill: white;");
+
                     VBox day = new VBox();
                     String whichDayInWeek = getDay(j);
                     Label label = new Label(whichDayInWeek);
@@ -71,9 +84,14 @@ public class weekCalendarController  implements Initializable {
                     day.setPrefHeight(20);
                     day.setMaxHeight(30);
                     day.setStyle("-fx-background-color: #6C7B8B; -fx-min-height: 50px;");
+
+                    day.getChildren().add(dateLabel);
                     day.getChildren().add(label);
+
                     day.setAlignment(Pos.CENTER);
-                    bodyPane.add(day, j,i);
+                    bodyPane.add(day, j, i);
+
+                    monday = monday.plusDays(1);
                 }
             }
         }
@@ -83,26 +101,46 @@ public class weekCalendarController  implements Initializable {
 
         leftTopVBoxCalendar.setSpacing(8);
 
-        backButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                try {
-                    goBack(stage);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        backButton.setOnAction(event -> {
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            try {
+                goBack(stage);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
-        newEvent.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                try {
-                    newEvent(stage);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        newEvent.setOnAction(event -> {
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            try {
+                newEvent(stage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        contacts.setOnAction(event -> {
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("contacts.fxml"));
+                Stage window = new Stage();
+                window.setTitle("Kidary");
+                window.setScene(new Scene(root, 350, 430));
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        messenger.setOnAction(event -> {
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("messenger.fxml"));
+                Stage window = new Stage();
+                window.setTitle("Kidary");
+                window.setScene(new Scene(root, 350, 430));
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
     }
@@ -123,7 +161,7 @@ public class weekCalendarController  implements Initializable {
         label.setStyle("-fx-text-fill: white;");
         calendarEvent.getChildren().add(label);
         calendarEvent.setAlignment(Pos.CENTER);
-        calendarEvent.setOnMouseClicked( event -> {
+        calendarEvent.setOnMouseClicked(event -> {
             setEventName(subject);
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("eventDetail.fxml"));
@@ -135,7 +173,7 @@ public class weekCalendarController  implements Initializable {
                 e.printStackTrace();
             }
         });
-        gridPane.add(calendarEvent, 0,time);
+        gridPane.add(calendarEvent, 0, time);
     }
 
     private String getDay(int numberOfDayInWeek) {
@@ -160,14 +198,14 @@ public class weekCalendarController  implements Initializable {
 
     private void goBack(Stage window) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("calendarDetail.fxml"));
-        window.setScene(new Scene(root, 1300 ,850));
+        window.setScene(new Scene(root, 1300, 850));
         window.setTitle("Kidary");
         window.show();
     }
 
     private void newEvent(Stage window) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("newEvent.fxml"));
-        window.setScene(new Scene(root, 650 ,850));
+        window.setScene(new Scene(root, 650, 850));
         window.setTitle("Kidary");
         window.show();
     }
