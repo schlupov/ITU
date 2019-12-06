@@ -31,19 +31,10 @@ public class weekCalendarController implements Initializable {
     @FXML
     public VBox leftTopVBoxCalendar;
     @FXML
-    public GridPane monday;
+    public JFXButton weekBack;
     @FXML
-    public GridPane tuesday;
-    @FXML
-    public GridPane wednesday;
-    @FXML
-    public GridPane thursday;
-    @FXML
-    public GridPane saturday;
-    @FXML
-    public GridPane friday;
-    @FXML
-    public GridPane sunday;
+    public JFXButton weekForward;
+
     @FXML
     public JFXButton backButton;
     @FXML
@@ -55,6 +46,8 @@ public class weekCalendarController implements Initializable {
     @FXML
     public JFXButton messenger;
 
+    private LocalDate date = LocalDate.now();
+    private LocalDate monday = null;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -70,48 +63,18 @@ public class weekCalendarController implements Initializable {
         bodyPane.setVgap(3);
         bodyPane.setPadding(new Insets(3, 3, 3, 3));
 
-        for (int i = 0; i < 2; i++) {
+        //LocalDate monday = date;
+        createCalendarHeader();
 
-            LocalDate today = LocalDate.now();
+        for (int t = 0 ; t<24; t++) {
 
-            LocalDate monday = today;
-            while (monday.getDayOfWeek() != DayOfWeek.MONDAY) {
-                monday = monday.minusDays(1);
-            }
-
-            for (int j = 0; j < 7; j++) {
-                if (i == 0) {
-
-                    Label dateLabel = new Label(monday.toString());
-                    dateLabel.setStyle("-fx-text-fill: white;");
-
-                    VBox day = new VBox();
-                    String whichDayInWeek = getDay(j);
-                    Label label = new Label(whichDayInWeek);
-                    label.setStyle("-fx-text-fill: white;");
-                    day.setPrefHeight(20);
-                    day.setMaxHeight(30);
-                    day.setStyle("-fx-background-color: #6C7B8B; -fx-min-height: 50px;");
-
-                    day.getChildren().add(dateLabel);
-                    day.getChildren().add(label);
-
-                    day.setAlignment(Pos.CENTER);
-                    calendarHeader.add(day, j+1, i);
-
-                    monday = monday.plusDays(1);
-                }
-            }
-            for (int t = 0 ; t<24; t++) {
-
-                String text = String.valueOf(t) + ":00";
-                calendarGrid.add(new Label(text), 0,t);
-            }
+            String text = String.valueOf(t) + ":00";
+            calendarGrid.add(new Label(text), 0,t);
         }
 
         addEvent(calendarGrid, 0, 8, "Angličtina");
         addEvent(calendarGrid, 1,12, "Matematika");
-        addEvent(calendarGrid, 1,23, "Matematika");
+        //addEvent(calendarGrid, 1,23, "Matematika");
 
         leftTopVBoxCalendar.setSpacing(8);
 
@@ -130,6 +93,18 @@ public class weekCalendarController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        });
+
+        weekBack.setOnAction(event->{
+            date = date.minusWeeks(1);
+
+            createCalendarHeader();
+        });
+
+        weekForward.setOnAction(event->{
+            date = date.minusWeeks(1);
+
+            createCalendarHeader();
         });
 
         contacts.setOnAction(event -> {
@@ -159,6 +134,42 @@ public class weekCalendarController implements Initializable {
         });
     }
 
+    private void createCalendarHeader() {
+        calendarHeader.getChildren().clear();
+
+        monday = date;
+        while (monday.getDayOfWeek() != DayOfWeek.MONDAY) {
+            monday = monday.minusDays(1);
+        }
+
+        for (int i = 0; i < 2; i++) {
+
+            for (int j = 0; j < 7; j++) {
+                if (i == 0) {
+
+                    Label dateLabel = new Label(monday.toString());
+                    dateLabel.setStyle("-fx-text-fill: white;");
+
+                    VBox day = new VBox();
+                    String whichDayInWeek = getDay(j);
+                    Label label = new Label(whichDayInWeek);
+                    label.setStyle("-fx-text-fill: white;");
+                    day.setPrefHeight(20);
+                    day.setMaxHeight(30);
+                    day.setStyle("-fx-background-color: #6C7B8B; -fx-min-height: 50px;");
+
+                    day.getChildren().add(dateLabel);
+                    day.getChildren().add(label);
+
+                    day.setAlignment(Pos.CENTER);
+                    calendarHeader.add(day, j+1, i);
+
+                    monday = monday.plusDays(1);
+                }
+            }
+        }
+    }
+
     private void addEvent(GridPane gridPane, int day, int time, String subject) {
         VBox calendarEvent = new VBox();
         //calendarEvent.setSpacing(8);
@@ -169,6 +180,12 @@ public class weekCalendarController implements Initializable {
                 break;
             case "Matematika":
                 calendarEvent.setStyle("-fx-background-color: #4CBB17; -fx-background-radius: 20px;");
+                break;
+            case "Tělocvik":
+                calendarEvent.setStyle("-fx-background-color: #35d4db; -fx-background-radius: 20px;");
+                break;
+            case "Čeština":
+                calendarEvent.setStyle("-fx-background-color: #bba53c; -fx-background-radius: 20px;");
                 break;
         }
         Label label = new Label(subject);
