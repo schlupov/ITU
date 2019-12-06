@@ -56,7 +56,11 @@ public class weekCalendarController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // nastavi jmeno na Petr, pokud uzivatel kliknul na tlacitko Petr
         labelName.setText(labelName.getText() + Calendar.getMyVariable());
-        labelName.setStyle("-fx-font-family: 'Helvetica', Arial, sans-serif; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 24px");
+        labelName.setStyle("" +
+                "-fx-font-family: 'Helvetica', Arial, sans-serif;" +
+                " -fx-font-weight: bold; -fx-text-fill: white;" +
+                " -fx-font-size: 24px;"
+        );
 
         bodyPane.setHgap(3);
         bodyPane.setVgap(3);

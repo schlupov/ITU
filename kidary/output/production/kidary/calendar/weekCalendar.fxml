@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,6 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.weekCalendarController">
     <AnchorPane VBox.vgrow="ALWAYS">
@@ -28,13 +31,28 @@
                      <VBox fx:id="leftTopVBoxCalendar" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                         <children>
                            <Label fx:id="labelName" alignment="CENTER" />
-                           <JFXButton fx:id="newEvent" text="Nová událost" />
-                           <JFXButton fx:id="contacts" text="Kontakty" />
+                           <JFXButton fx:id="newEvent" prefHeight="50.0" prefWidth="150.0" text="Nová událost" textAlignment="RIGHT">
+                              <padding>
+                                 <Insets left="30.0" />
+                              </padding></JFXButton>
+                           <JFXButton fx:id="messenger" prefHeight="34.0" prefWidth="150.0" text="2 Nové zprávy" textAlignment="RIGHT">
+                              <padding>
+                                 <Insets left="40.0" />
+                              </padding></JFXButton>
+                           <JFXButton id="contacts" fx:id="contacts" prefWidth="150.0" stylesheets="@../css/calendar.css" text="Kontakty" textAlignment="RIGHT" />
                         </children>
                      </VBox>
                      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
                         <children>
-                           <JFXButton fx:id="backButton" alignment="CENTER" text="Zpět" />
+                           <JFXTextField fx:id="birthdayText" alignment="CENTER" editable="false" text="16. Února, 8 let">
+                              <font>
+                                 <Font name="Cantarell Regular" size="16.0" />
+                              </font></JFXTextField>
+                           <JFXTextField id="namedayText" fx:id="namedayText" alignment="CENTER" editable="false" stylesheets="@../css/calendar.css" text="1. Června (Petr)">
+                              <font>
+                                 <Font name="Cantarell Regular" size="16.0" />
+                              </font></JFXTextField>
+                           <JFXButton fx:id="backButton" alignment="CENTER" prefHeight="77.0" prefWidth="160.0" text="Zpět do hlavní nabídky" textAlignment="RIGHT" wrapText="true" />
                         </children>
                      </VBox>
                      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1" />
@@ -152,6 +170,58 @@
                      </children>
                   </GridPane>
                </center>
+               <left>
+                  <GridPane prefWidth="40.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="444.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="828.0" minHeight="10.0" prefHeight="819.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXTextField editable="false" text="12:00" GridPane.rowIndex="6" />
+                              <JFXTextField editable="false" text="7:00" GridPane.rowIndex="1" />
+                              <JFXTextField editable="false" text="8:00" GridPane.rowIndex="2" />
+                              <JFXTextField editable="false" text="11:00" GridPane.rowIndex="5" />
+                              <JFXTextField editable="false" text="10:00" GridPane.rowIndex="4" />
+                              <JFXTextField editable="false" text="9:00" GridPane.rowIndex="3" />
+                              <JFXTextField editable="false" text="20:00" GridPane.rowIndex="14" />
+                              <JFXTextField editable="false" text="19:00" GridPane.rowIndex="13" />
+                              <JFXTextField editable="false" text="18:00" GridPane.rowIndex="12" />
+                              <JFXTextField editable="false" text="17:00" GridPane.rowIndex="11" />
+                              <JFXTextField editable="false" text="16:00" GridPane.rowIndex="10" />
+                              <JFXTextField editable="false" text="15:00" GridPane.rowIndex="9" />
+                              <JFXTextField editable="false" text="14:00" GridPane.rowIndex="8" />
+                              <JFXTextField editable="false" text="13:00" GridPane.rowIndex="7" />
+                              <JFXTextField editable="false" text="6:00" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </left>
                 </BorderPane>
             </AnchorPane>
         </SplitPane>

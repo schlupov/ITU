@@ -46,7 +46,7 @@ public class manageCalendarController implements Initializable {
                 setMyVariable("Petr");
                 Stage stage = (Stage) Petr.getScene().getWindow();
                 try {
-                    getViewMonthCalendar(stage);
+                    getViewWeekCalendar(stage);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -54,7 +54,7 @@ public class manageCalendarController implements Initializable {
         });
     }
 
-    private void getViewMonthCalendar(Stage window) throws IOException {
+    private void getViewWeekCalendar(Stage window) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("weekCalendar.fxml"));
         window.setScene(new Scene(root, 1300 ,850));
         window.setTitle("Kidary");
