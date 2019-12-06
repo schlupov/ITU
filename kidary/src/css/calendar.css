@@ -147,11 +147,10 @@
     -fx-text-fill: WHITE;
 }
 
-#hboxNewEventTop {
+#buttonBack:hover, @buttonSend:hover, #buttonCreate:hover {
     -fx-background-color: #2CA58D;
 }
 
-#messageTextField {
-  -fx-text-box-border: red ;
-  -fx-focus-color: red ;
+#hboxNewEventTop {
+    -fx-background-color: #2CA58D;
 }
