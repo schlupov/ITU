@@ -25,6 +25,10 @@ public class weekCalendarController implements Initializable {
     @FXML
     public GridPane bodyPane;
     @FXML
+    public GridPane calendarGrid;
+    @FXML
+    public GridPane calendarHeader;
+    @FXML
     public VBox leftTopVBoxCalendar;
     @FXML
     public GridPane monday;
@@ -93,15 +97,20 @@ public class weekCalendarController implements Initializable {
                     day.getChildren().add(label);
 
                     day.setAlignment(Pos.CENTER);
-                    bodyPane.add(day, j, i);
+                    calendarHeader.add(day, j+1, i);
 
                     monday = monday.plusDays(1);
                 }
             }
+            for (int t = 0 ; t<24; t++) {
+
+                String text = String.valueOf(t+1) + ":00";
+                calendarGrid.add(new Label(text), 0,t);
+            }
         }
 
-        addEvent(monday, 1, "Angličtina");
-        addEvent(tuesday, 4, "Matematika");
+        addEvent(calendarGrid, 0, 2, "Angličtina");
+        addEvent(calendarGrid, 1,8, "Matematika");
 
         leftTopVBoxCalendar.setSpacing(8);
 
@@ -149,10 +158,10 @@ public class weekCalendarController implements Initializable {
         });
     }
 
-    private void addEvent(GridPane gridPane, int time, String subject) {
+    private void addEvent(GridPane gridPane, int day, int time, String subject) {
         VBox calendarEvent = new VBox();
-        calendarEvent.setSpacing(8);
-        calendarEvent.setPadding(new Insets(5, 5, 5, 5));
+        //calendarEvent.setSpacing(8);
+        //calendarEvent.setPadding(new Insets(5, 5, 5, 5));
         switch (subject) {
             case "Angličtina":
                 calendarEvent.setStyle("-fx-background-color: #DB2645; -fx-background-radius: 20px;");
@@ -177,7 +186,7 @@ public class weekCalendarController implements Initializable {
                 e.printStackTrace();
             }
         });
-        gridPane.add(calendarEvent, 0, time);
+        gridPane.add(calendarEvent, day+1, time);
     }
 
     private String getDay(int numberOfDayInWeek) {
