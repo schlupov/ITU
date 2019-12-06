@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.text.Text?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="400.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.childCalendarController">
    <children>
       <AnchorPane VBox.vgrow="ALWAYS">
@@ -89,21 +90,21 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                        <children>
-                                          <JFXTextField editable="false" text="12:00" GridPane.rowIndex="6" />
-                                          <JFXTextField editable="false" text="7:00" GridPane.rowIndex="1" />
-                                          <JFXTextField editable="false" text="8:00" GridPane.rowIndex="2" />
-                                          <JFXTextField editable="false" text="11:00" GridPane.rowIndex="5" />
-                                          <JFXTextField editable="false" text="10:00" GridPane.rowIndex="4" />
-                                          <JFXTextField editable="false" text="9:00" GridPane.rowIndex="3" />
-                                          <JFXTextField editable="false" text="20:00" GridPane.rowIndex="14" />
-                                          <JFXTextField editable="false" text="19:00" GridPane.rowIndex="13" />
-                                          <JFXTextField editable="false" text="18:00" GridPane.rowIndex="12" />
-                                          <JFXTextField editable="false" text="17:00" GridPane.rowIndex="11" />
-                                          <JFXTextField editable="false" text="16:00" GridPane.rowIndex="10" />
-                                          <JFXTextField editable="false" text="15:00" GridPane.rowIndex="9" />
-                                          <JFXTextField editable="false" text="14:00" GridPane.rowIndex="8" />
-                                          <JFXTextField editable="false" text="13:00" GridPane.rowIndex="7" />
-                                          <JFXTextField editable="false" text="6:00" />
+                                          <Text text="12:00" GridPane.rowIndex="6" />
+                                          <Text  text="7:00" GridPane.rowIndex="1" />
+                                          <Text  text="8:00" GridPane.rowIndex="2" />
+                                          <Text  text="11:00" GridPane.rowIndex="5" />
+                                          <Text  text="10:00" GridPane.rowIndex="4" />
+                                          <Text  text="9:00" GridPane.rowIndex="3" />
+                                          <Text  text="20:00" GridPane.rowIndex="14" />
+                                          <Text  text="19:00" GridPane.rowIndex="13" />
+                                          <Text  text="18:00" GridPane.rowIndex="12" />
+                                          <Text  text="17:00" GridPane.rowIndex="11" />
+                                          <Text  text="16:00" GridPane.rowIndex="10" />
+                                          <Text  text="15:00" GridPane.rowIndex="9" />
+                                          <Text  text="14:00" GridPane.rowIndex="8" />
+                                          <Text  text="13:00" GridPane.rowIndex="7" />
+                                          <Text  text="6:00" />
                                        </children>
                                     </GridPane>
                                  </children>
@@ -119,6 +120,7 @@
                                        </font>
                                     </Label>
                                     <JFXButton fx:id="right" text="&gt;" />
+                                    <JFXButton fx:id="messenger" text="Zpravy" />
                                  </children>
                               </HBox>
                            </top>

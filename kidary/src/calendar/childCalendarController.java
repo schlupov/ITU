@@ -1,6 +1,8 @@
 package calendar;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,6 +31,9 @@ public class childCalendarController implements Initializable {
     public HBox hboxNewEventTop;
 
     @FXML
+    public JFXButton messenger;
+
+    @FXML
     public JFXButton left;
     @FXML
     public JFXButton right;
@@ -50,10 +55,23 @@ public class childCalendarController implements Initializable {
 
             checkDate();
         });
+
+        messenger.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = (Stage) messenger.getScene().getWindow();
+                try {
+                    gotoMessenger(stage);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     private  void checkDate(){
-        childCalendarGrid.getChildren().clear();
+        //if (!childCalendarGrid.getChildren().isEmpty())
+            childCalendarGrid.getChildren().clear();
 
         if (date.equals(LocalDate.now()))
         {
@@ -102,5 +120,12 @@ public class childCalendarController implements Initializable {
         });
 
         childCalendarGrid.add(calendarEvent, 0, time,1,2);
+    }
+
+    private void gotoMessenger(Stage window) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("childMessenger.fxml"));
+        window.setScene(new Scene(root, 400, 700));
+        window.setTitle("Kidary");
+        window.show();
     }
 }
