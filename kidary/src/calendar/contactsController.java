@@ -69,7 +69,7 @@ public class contactsController implements Initializable {
         for (int i=0; i<4; i++){
             for (int j = 0; j<5; j++) {
 
-                Label text = new Label(getCm().a[j][i]);
+                Label text = new Label(getCm().a.get(j)[i]);
 
                 bodyGrid.add(text,i,j+1);
             }
