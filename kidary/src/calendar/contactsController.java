@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -22,6 +23,12 @@ public class contactsController implements Initializable {
 //    public JFXButton buttonBack;
     @FXML
     public GridPane bodyGrid;
+
+    @FXML
+    public JFXButton buttonCreate;
+
+    @FXML
+    public JFXButton drop;
 
     private contactModel cm;
 
@@ -42,6 +49,20 @@ public class contactsController implements Initializable {
 //                }
 //            }
 //        });
+
+        buttonCreate.setOnAction(event -> {
+            Stage stage = (Stage) buttonCreate.getScene().getWindow();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("newContact.fxml"));
+                Stage window = new Stage();
+                window.setTitle("Kidary");
+                window.setScene(new Scene(root, 400, 300));
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
     public void fillContacts() {

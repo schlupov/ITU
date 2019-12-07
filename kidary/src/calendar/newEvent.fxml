@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -36,8 +37,11 @@
                <bottom>
                   <Pane prefHeight="69.0" prefWidth="700.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXButton fx:id="buttonCreate" layoutX="471.0" layoutY="22.0" text="Vytvořit" />
-                        <JFXButton fx:id="drop" layoutX="567.0" layoutY="22.0" text="Zahodit" />
+                        <JFXButton fx:id="buttonCreate" layoutX="546.0" layoutY="22.0" text="Vytvořit" />
+                        <JFXButton fx:id="drop" layoutX="446.0" layoutY="22.0" prefHeight="37.0" prefWidth="87.0" text="Zahodit">
+                           <font>
+                              <Font size="17.0" />
+                           </font></JFXButton>
                         <JFXButton fx:id="buttonBack" layoutX="25.0" layoutY="22.0" text="Zpět" />
                      </children>
                   </Pane>
@@ -51,98 +55,126 @@
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="129.0" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="285.0" minHeight="10.0" prefHeight="106.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="281.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="214.0" minHeight="0.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="109.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="149.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="79.0" prefWidth="314.0" GridPane.columnIndex="1">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="79.0" prefWidth="314.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <Label text="Název">
+                              <Label text="Název:">
                                  <HBox.margin>
                                     <Insets right="10.0" />
-                                 </HBox.margin></Label>
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <children>
-                              <Label text="Typ">
-                                 <HBox.margin>
-                                    <Insets right="10.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children></HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <Label text="Kalendář">
+                              <Label text="Typ:">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <Label text="Kontakty">
+                              <Label text="Kalendář:">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <children>
-                              <Label text="Datum">
+                              <Label text="Kontakty:">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <children>
-                              <Label text="Začátek">
+                              <Label text="Datum:">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                            <children>
-                              <Label text="Konec">
+                              <Label text="Začátek:">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                            <children>
-                              <Label text="Místo">
+                              <Label text="Konec:">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <children>
-                              <Label text="Poznámka">
+                              <Label text="Místo:">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font>
                               </Label>
                            </children></HBox>
-                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                            <children>
-                              <JFXTextField />
+                              <Label text="Poznámka:">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="16.0" />
+                                 </font>
+                              </Label>
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <children>
                               <JFXTextField />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <JFXTextField />
+                           </children></HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <children>
                               <JFXRadioButton text="Petr">
                                  <HBox.margin>
@@ -156,17 +188,13 @@
                               </JFXRadioButton>
                               <JFXRadioButton text="Nina" />
                            </children></HBox>
-                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                           <children>
-                              <JFXTextField />
-                           </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                            <children>
-                              <DatePicker />
+                              <ChoiceBox prefWidth="150.0" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                            <children>
-                              <JFXTextField />
+                              <DatePicker />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                            <children>
@@ -178,15 +206,27 @@
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
                            <children>
+                              <JFXTextField />
+                           </children></HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                           <children>
                               <JFXTextArea />
                            </children></HBox>
-                        <ColorPicker fx:id="colorPicker">
+                        <ColorPicker fx:id="colorPicker" GridPane.columnIndex="2">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                            <GridPane.margin>
-                              <Insets left="10.0" right="5.0" />
+                              <Insets />
                            </GridPane.margin></ColorPicker>
+                        <Label text="Barva:" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                           <font>
+                              <Font name="Cantarell Extra Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
                      </children>
                   </GridPane>
                </center>

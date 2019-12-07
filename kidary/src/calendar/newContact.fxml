@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="300.0" prefWidth="400.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.createNewCalendarController">
+    <AnchorPane VBox.vgrow="NEVER">
+        <Pane fx:id="createNewCalendarPane" layoutY="89.0" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <JFXTextField layoutX="158.0" layoutY="66.0" prefHeight="28.0" prefWidth="188.0" />
+            <Text layoutX="97.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jméno:">
+            <font>
+               <Font name="Cantarell Extra Bold" size="15.0" />
+            </font></Text>
+            <JFXButton fx:id="createButton" layoutX="314.0" layoutY="263.0" text="Vytvořit" />
+            <JFXButton fx:id="drop" layoutX="236.0" layoutY="263.0" text="Zahodit" />
+         <Text layoutX="83.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Příjmení:">
+            <font>
+               <Font name="Cantarell Extra Bold" size="15.0" />
+            </font>
+         </Text>
+         <Text layoutX="90.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon:" textAlignment="CENTER">
+            <font>
+               <Font name="Cantarell Extra Bold" size="15.0" />
+            </font>
+         </Text>
+         <Text layoutX="103.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" textAlignment="RIGHT">
+            <font>
+               <Font name="Cantarell Extra Bold" size="15.0" />
+            </font>
+         </Text>
+         <JFXTextField layoutX="158.0" layoutY="110.0" prefHeight="28.0" prefWidth="188.0" />
+         <JFXTextField layoutX="158.0" layoutY="152.0" prefHeight="28.0" prefWidth="188.0" />
+         <JFXTextField layoutX="158.0" layoutY="192.0" prefHeight="28.0" prefWidth="188.0" />
+        </Pane>
+        <Pane fx:id="newCalendarPane" prefHeight="60.0" prefWidth="400.0">
+            <Text fill="WHITE" layoutX="101.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vytvořit nový kontakt">
+            <font>
+               <Font name="DejaVu Sans Condensed Bold" size="17.0" />
+            </font>
+         </Text>
+        </Pane>
+    </AnchorPane>
+</VBox>

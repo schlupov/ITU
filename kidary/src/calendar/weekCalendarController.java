@@ -118,7 +118,7 @@ public class weekCalendarController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("contacts.fxml"));
                 Stage window = new Stage();
                 window.setTitle("Kidary");
-                window.setScene(new Scene(root, 350, 430));
+                window.setScene(new Scene(root, 650, 900));
                 window.show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -153,15 +153,15 @@ public class weekCalendarController implements Initializable {
                 if (i == 0) {
 
                     Label dateLabel = new Label(monday.toString());
-                    dateLabel.setStyle("-fx-text-fill: white;");
+                    dateLabel.setStyle("-fx-text-fill: BLACK; -fx-font-size: 20px;");
 
                     VBox day = new VBox();
                     String whichDayInWeek = getDay(j);
                     Label label = new Label(whichDayInWeek);
-                    label.setStyle("-fx-text-fill: white;");
+                    label.setStyle("-fx-text-fill: BLACK;");
                     day.setPrefHeight(20);
                     day.setMaxHeight(30);
-                    day.setStyle("-fx-background-color: #6C7B8B; -fx-min-height: 50px;");
+                    day.setStyle("-fx-background-color: #E1E2DC; -fx-min-height: 50px;");
 
                     day.getChildren().add(dateLabel);
                     day.getChildren().add(label);
