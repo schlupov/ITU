@@ -197,21 +197,23 @@
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                            <children>
-                              <DatePicker fx:id="from" />
+                              <DatePicker  fx:id="date"/>
+
                               <!--<JFXTimePicker fx:id="fromTime"></JFXTimePicker>-->
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                            <children>
-                              <DatePicker fx:id="to"/>
+                              <DatePicker fx:id="from" />
                               <!--<JFXTimePicker fx:id="toTime" ></JFXTimePicker>-->
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                            <children>
-                              <JFXTextField fx:id="place" />
+                              <DatePicker fx:id="to"/>
+
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
                            <children>
-                               <DatePicker  fx:id="date"/>
+                              <JFXTextField fx:id="place" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
                            <children>
