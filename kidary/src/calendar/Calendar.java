@@ -18,8 +18,9 @@ public class Calendar extends Application {
     private static Data data;
     private static contactModel cm;
     private static Event lastClicked;
-
-
+    private static String newCalendar;
+    private static String birthday;
+    private static Stage previousStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -40,23 +41,20 @@ public class Calendar extends Application {
     public static String getMyVariable() {
         return name;
     }
+    public static void setMyVariable(String myVariable) {
+        Calendar.name = myVariable;
+    }
 
     public static String getEventName() {
         return eventName;
     }
-
     public static void setEventName(String eventName) {
         Calendar.eventName = eventName;
-    }
-
-    public static void setMyVariable(String myVariable) {
-        Calendar.name = myVariable;
     }
 
     public static Data getData() {
         return data;
     }
-
     public static void setData(Data data) {
         Calendar.data = data;
     }
@@ -76,4 +74,18 @@ public class Calendar extends Application {
         Calendar.cm = cm;
     }
 
+    public static String getNewCalendar() {
+        return newCalendar;
+    }
+    public static void setNewCalendar(String newCalendar) { Calendar.newCalendar = newCalendar;}
+
+    public static String getBirthday() {
+        return birthday;
+    }
+    public static void setBirthday(String birthday) { Calendar.birthday = birthday;}
+
+    public static Stage getPreviousStage() {
+        return previousStage;
+    }
+    public static void setPreviousStage(Stage previousStage) { Calendar.previousStage = previousStage;}
 }

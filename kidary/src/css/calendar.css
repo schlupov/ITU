@@ -165,7 +165,7 @@
     -fx-background-color: #2CA58D;
 }
 
-@buttonSend:hover {
+#buttonSend:hover {
     -fx-background-color: #2CA58D;
 }
 

@@ -16,8 +16,8 @@
             <font>
                <Font name="Cantarell Extra Bold" size="15.0" />
             </font></Text>
-            <DatePicker layoutX="158.0" layoutY="153.0" />
-            <JFXTextField layoutX="158.0" layoutY="106.0" prefHeight="28.0" prefWidth="188.0" />
+            <DatePicker fx:id="datePicker" layoutX="158.0" layoutY="153.0" />
+            <JFXTextField fx:id="nameTextField" layoutX="158.0" layoutY="106.0" prefHeight="28.0" prefWidth="188.0" />
             <Text layoutX="93.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jméno:">
             <font>
                <Font name="Cantarell Extra Bold" size="15.0" />

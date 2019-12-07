@@ -32,7 +32,7 @@
                <Font name="Cantarell Bold" size="20.0" />
             </font>
          </Text>
-         <JFXButton fx:id="add1" layoutX="656.0" layoutY="548.0" prefHeight="87.0" prefWidth="26.0" stylesheets="@../css/calendar.css" text="+" textFill="#7c7c7c">
+         <JFXButton fx:id="add1" layoutX="645.0" layoutY="546.0" stylesheets="@../css/calendar.css" text="+" textFill="#7c7c7c">
             <font>
                <Font name="Cantarell Regular" size="44.0" />
             </font>
@@ -42,6 +42,7 @@
                <Font name="Cantarell Extra Bold" size="20.0" />
             </font>
          </JFXButton>
+         <VBox fx:id="vboxNewUser" layoutX="172.0" layoutY="460.0" />
         </Pane>
     </AnchorPane>
 </VBox>

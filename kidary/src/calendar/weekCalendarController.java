@@ -2,6 +2,7 @@ package calendar;
 
 import calendar.Models.Event;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,6 +53,8 @@ public class weekCalendarController implements Initializable {
     public JFXButton contacts;
     @FXML
     public JFXButton messenger;
+    @FXML
+    public JFXTextField birthdayText;
 
     private LocalDate date = LocalDate.now();
     private LocalDate monday = null;
@@ -60,14 +63,10 @@ public class weekCalendarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setName();
+        setBirthday();
         setBPane();
         createCalendarHeader();
-
         setContent();
-
-//        addEvent(calendarGrid, 0, 8, "Angličtina");
-//        addEvent(calendarGrid, 1, 8, "Matematika");
-        //addEvent(calendarGrid, 1,23, "Matematika");
 
         leftTopVBoxCalendar.setSpacing(8);
 
@@ -81,7 +80,7 @@ public class weekCalendarController implements Initializable {
         });
 
         newEvent.setOnAction(event -> {
-            Stage stage = new Stage();//(Stage) backButton.getScene().getWindow();
+            Stage stage = new Stage();
 
             stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                 public void handle(WindowEvent we) {
@@ -128,7 +127,7 @@ public class weekCalendarController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("messenger.fxml"));
                 Stage window = new Stage();
                 window.setTitle("Kidary");
-                window.setScene(new Scene(root, 350, 430));
+                window.setScene(new Scene(root, 650, 950));
                 window.show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -166,7 +165,17 @@ public class weekCalendarController implements Initializable {
                 " -fx-font-weight: bold; -fx-text-fill: white;" +
                 " -fx-font-size: 24px;"
         );
+        if (Calendar.getMyVariable().equals("Petr")) {
+            birthdayText.setText("31.5, 25 let");
+        }
     }
+
+    private void setBirthday() {
+        if (!Calendar.getMyVariable().equals("Petr")) {
+            birthdayText.setText(Calendar.getBirthday());
+        }
+    }
+
 
     private void setBPane() {
         bodyPane.setHgap(3);
