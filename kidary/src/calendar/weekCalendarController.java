@@ -61,7 +61,6 @@ public class weekCalendarController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setName();
         setBPane();
-        setTimeStamps();
         createCalendarHeader();
 
         setContent();
@@ -139,6 +138,7 @@ public class weekCalendarController implements Initializable {
 
     private void setContent() {
         calendarGrid.getChildren().clear();
+        setTimeStamps();
 
         for (var item : getData().a) {
             addEvent(calendarGrid, item);
@@ -151,6 +151,7 @@ public class weekCalendarController implements Initializable {
         for (int t = 0; t < 24; t++) {
             String text = String.valueOf(t) + ":00";
             Label label = new Label(text);
+            label.setStyle("-fx-text-fill: black");
             calendarGrid.add(label, 0, t);
             GridPane.setHalignment(label, HPos.CENTER);
             GridPane.setValignment(label, VPos.TOP);
@@ -183,16 +184,16 @@ public class weekCalendarController implements Initializable {
 
         for (int j = 0; j < 7; j++) {
 
-                    Label dateLabel = new Label(monday.toString());
-                    dateLabel.setStyle("-fx-text-fill: BLACK; -fx-font-size: 20px;");
+            Label dateLabel = new Label(monday.toString());
+            dateLabel.setStyle("-fx-text-fill: BLACK; -fx-font-size: 20px;");
 
-                    VBox day = new VBox();
-                    String whichDayInWeek = getDay(j);
-                    Label label = new Label(whichDayInWeek);
-                    label.setStyle("-fx-text-fill: BLACK;");
-                    day.setPrefHeight(20);
-                    day.setMaxHeight(30);
-                    day.setStyle("-fx-background-color: #E1E2DC; -fx-min-height: 50px;");
+            VBox day = new VBox();
+            String whichDayInWeek = getDay(j);
+            Label label = new Label(whichDayInWeek);
+            label.setStyle("-fx-text-fill: BLACK;");
+            day.setPrefHeight(20);
+            day.setMaxHeight(30);
+            day.setStyle("-fx-background-color: #E1E2DC; -fx-min-height: 50px;");
 
             day.getChildren().add(dateLabel);
             day.getChildren().add(label);

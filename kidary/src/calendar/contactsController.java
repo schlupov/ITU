@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,28 +33,24 @@ public class contactsController implements Initializable {
     @FXML
     public JFXButton drop;
 
+    private int j =0;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         fillContacts();
 
-
-//        buttonBack.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                Stage stage = (Stage) buttonBack.getScene().getWindow();
-//                try {
-//                    goBack(stage);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-
         buttonCreate.setOnAction(event -> {
             Stage stage = (Stage) buttonCreate.getScene().getWindow();
+
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("newContact.fxml"));
                 Stage window = new Stage();
+                window.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                    public void handle(WindowEvent we) {
+                        // Refresh the parent window here
+                        fillContacts();
+                    }
+                });
                 window.setTitle("Kidary");
                 window.setScene(new Scene(root, 400, 300));
                 window.show();
@@ -67,7 +64,7 @@ public class contactsController implements Initializable {
     public void fillContacts() {
 
         for (int i=0; i<4; i++){
-            for (int j = 0; j<5; j++) {
+            for ( j = 0; j<getCm().a.size(); j++) {
 
                 Label text = new Label(getCm().a.get(j)[i]);
 
