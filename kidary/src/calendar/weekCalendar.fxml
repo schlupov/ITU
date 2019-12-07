@@ -85,13 +85,13 @@
                               <GridPane fx:id="calendarHeader" prefHeight="88.0" prefWidth="1127.0" GridPane.rowIndex="1">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="50.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="408.0" minWidth="10.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                  <ColumnConstraints fx:id="monday" hgrow="SOMETIMES" minWidth="10.0" />
+                                    <ColumnConstraints fx:id="tuesday" hgrow="SOMETIMES" minWidth="10.0" />
+                                    <ColumnConstraints fx:id="wednesday" hgrow="SOMETIMES" minWidth="10.0" />
+                                    <ColumnConstraints fx:id="thurday" hgrow="SOMETIMES" minWidth="10.0" />
+                                    <ColumnConstraints fx:id="friday" hgrow="SOMETIMES" minWidth="10.0" />
+                                    <ColumnConstraints fx:id="saturday" hgrow="SOMETIMES" maxWidth="408.0" minWidth="10.0" />
+                                    <ColumnConstraints fx:id="sunday" hgrow="SOMETIMES" minWidth="10.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="15.0" minWidth="0.0" prefWidth="0.0" />
                                 </columnConstraints>
                                 <rowConstraints>
@@ -103,13 +103,13 @@
                                     <GridPane fx:id="calendarGrid" maxHeight="2500.0" prefHeight="2500.0" prefWidth="1099.0">
                                       <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="50.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints fx:id="mondayPane" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints fx:id="tuesdayPane" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints fx:id="wednesdayPane" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints fx:id="thursdayPane" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints fx:id="fridayPane" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints fx:id="saturdayPane" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints fx:id="sundayPane" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                       </columnConstraints>
                                       <rowConstraints>
                                         <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />

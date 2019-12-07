@@ -18,7 +18,7 @@
     -fx-font-size: 20;
 }
 
-#PaneWelcome {
+#PaneWelcome, #createNewCalendarPane, #monday, #mondayPane, #wednesday, #wednesdayPane, #friday, #fridayPane, #sunday, #sundayPane, #bodyVBox {
     -fx-background-color: #E1E2DC;
 }
 
@@ -161,10 +161,18 @@
     -fx-text-fill: WHITE;
 }
 
-#buttonBack:hover, @buttonSend:hover, #buttonCreate:hover {
+#buttonBack:hover {
     -fx-background-color: #2CA58D;
 }
 
-#hboxNewEventTop, #messagesMobilePanel, #messagesChildCalPanel, #topHboxEventDetail {
+@buttonSend:hover {
+    -fx-background-color: #2CA58D;
+}
+
+#buttonCreate:hover {
+    -fx-background-color: #2CA58D;
+}
+
+#hboxNewEventTop, #messagesMobilePanel, #messagesChildCalPanel, #topHboxEventDetail, #newCalendarPane {
     -fx-background-color: #2CA58D;
 }
