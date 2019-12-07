@@ -32,10 +32,11 @@
                <bottom>
                   <VBox prefHeight="220.0" prefWidth="650.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXTextField prefHeight="105.0" prefWidth="650.0" />
+                        <JFXTextField fx:id="text" prefHeight="105.0" prefWidth="650.0" />
                         <Pane prefHeight="103.0" prefWidth="650.0">
                            <children>
                               <JFXButton fx:id="buttonBack" layoutX="43.0" layoutY="21.0" prefHeight="61.0" prefWidth="149.0" text="Zpět" />
+                              <JFXButton fx:id="buttonRefresh" layoutX="210.0" layoutY="21.0" prefHeight="61.0" prefWidth="149.0" text="Obnovit" />
                               <JFXButton fx:id="buttonSend" layoutX="451.0" layoutY="21.0" prefHeight="61.0" prefWidth="149.0" text="Odeslat" />
                            </children>
                         </Pane>

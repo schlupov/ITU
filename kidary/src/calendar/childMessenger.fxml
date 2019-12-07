@@ -51,7 +51,9 @@
                <bottom>
                   <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXTextField />
+                        <JFXTextField fx:id="text"/>
+                        <JFXButton fx:id="buttonSend" layoutX="451.0" layoutY="21.0" prefHeight="61.0" prefWidth="149.0" text="Odeslat" />
+                        <JFXButton fx:id="reload" layoutX="451.0" layoutY="21.0" prefHeight="61.0" prefWidth="149.0" text="Obnovit" />
                      </children>
                   </VBox>
                </bottom>

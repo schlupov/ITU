@@ -1,7 +1,9 @@
 package calendar;
 
+import calendar.Models.Message;
 import calendar.Models.messengerModel;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,6 +17,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class childMessengerController implements Initializable {
@@ -22,6 +25,9 @@ public class childMessengerController implements Initializable {
     public JFXButton buttonBack;
     @FXML
     public VBox bodyVBox;
+    public JFXTextField text;
+    public JFXButton buttonSend;
+    public JFXButton reload;
 
     private messengerModel mm;
 
@@ -42,17 +48,40 @@ public class childMessengerController implements Initializable {
                 }
             }
         });
+
+        reload.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                fillMessager();
+            }
+        });
+
+        buttonSend.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Message m = new Message();
+                m.my = true;
+                m.date = LocalDate.now();
+                m.msg = text.getText();
+                text.setText("");
+                mm.messages.add(m);
+                mm.saveMsgs();
+                fillMessager();
+            }
+        });
     }
 
     public void fillMessager() {
+        mm.loadMsgs();
+        bodyVBox.getChildren().clear();
 
-        for (int i = 0; i < 4; i++) {
-            Label text = new Label(mm.messages[i].msg);
-            Label date = new Label(mm.messages[i].date.toString());
+        for (int i = 0; i < mm.messages.size(); i++) {
+            Label text = new Label(mm.messages.get(i).msg);
+            Label date = new Label(mm.messages.get(i).date.toString());
             VBox msgbox = new VBox();
             msgbox.getChildren().add(date);
             msgbox.getChildren().add(text);
-            if (mm.messages[i].my)
+            if (mm.messages.get(i).my)
             {
                 msgbox.setStyle("-fx-background-color: #a5bbb3; -fx-background-radius: 20px;");
             } else {

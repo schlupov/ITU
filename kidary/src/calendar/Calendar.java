@@ -3,6 +3,7 @@ package calendar;
 import calendar.Models.Data;
 import calendar.Models.Event;
 import calendar.Models.contactModel;
+import calendar.Models.messengerModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,6 +25,7 @@ public class Calendar extends Application {
     public void start(Stage primaryStage) throws Exception {
         data = new Data();
         cm = new contactModel();
+        new messengerModel().setData();
 
         Parent root = FXMLLoader.load(getClass().getResource("calendar.fxml"));
         primaryStage.setTitle("Kidary");
