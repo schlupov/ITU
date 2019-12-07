@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -25,11 +26,14 @@ public class createNewCalendarController implements Initializable {
     public Pane newCalendarPane;
     @FXML
     public JFXButton createButton;
+    @FXML
     public JFXButton drop;
     @FXML
     public JFXTextField nameTextField;
     @FXML
     public DatePicker datePicker;
+    @FXML
+    public Label errorLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -37,24 +41,38 @@ public class createNewCalendarController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 Calendar.setNewCalendar(nameTextField.getText());
-                LocalDate birthDate = datePicker.getValue();
-                int age = calculateAge(birthDate, LocalDate.now());
-                String day = Integer.toString(birthDate.getDayOfMonth());
-                String month = Integer.toString(birthDate.getMonthValue());
-                if (age > 0 && age <= 4) {
-                    Calendar.setBirthday(day + "." + month + ", " + Integer.toString(age) + " roky");
+                if (nameTextField.getText().isEmpty()) {
+                    errorLabel.setStyle("-fx-text-fill: red");
+                    errorLabel.setText("Jméno je nutné vyplnit!");
                 }
-                else {
-                    Calendar.setBirthday(day + "." + month + ", " + Integer.toString(age) + " let");
+                if (datePicker.getValue() != null) {
+                    LocalDate birthDate = datePicker.getValue();
+                    int age = calculateAge(birthDate, LocalDate.now());
+                    String day = Integer.toString(birthDate.getDayOfMonth());
+                    String month = Integer.toString(birthDate.getMonthValue());
+                    if (age > 0 && age <= 4) {
+                        Calendar.setBirthday(day + "." + month + ", " + Integer.toString(age) + " roky");
+                    } else {
+                        Calendar.setBirthday(day + "." + month + ", " + Integer.toString(age) + " let");
+                    }
                 }
-                Stage previousStage = Calendar.getPreviousStage();
-                previousStage.close();
-                Stage stage = (Stage) createButton.getScene().getWindow();
-                try {
-                    goBack(stage);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (!nameTextField.getText().isEmpty()) {
+                    Stage previousStage = Calendar.getPreviousStage();
+                    previousStage.close();
+                    Stage stage = (Stage) createButton.getScene().getWindow();
+                    try {
+                        goBack(stage);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
+            }
+        });
+        drop.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = (Stage) drop.getScene().getWindow();
+                stage.close();
             }
         });
     }
