@@ -237,7 +237,7 @@ public class weekCalendarController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("eventDetail.fxml"));
                 Stage window = new Stage();
                 window.setTitle("Kidary");
-                window.setScene(new Scene(root, 350, 430));
+                window.setScene(new Scene(root, 450, 400));
                 window.show();
             } catch (IOException ex) {
                 ex.printStackTrace();
