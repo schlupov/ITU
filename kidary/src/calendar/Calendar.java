@@ -1,5 +1,8 @@
 package calendar;
 
+import calendar.Models.Data;
+import calendar.Models.Event;
+import calendar.Models.contactModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,14 +14,22 @@ public class Calendar extends Application {
     private static String name;
     private static String eventName;
 
+    private static Data data;
+    private static contactModel cm;
+    private static Event lastClicked;
+
+
+
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
+        data = new Data();
+        cm = new contactModel();
+
         Parent root = FXMLLoader.load(getClass().getResource("calendar.fxml"));
         primaryStage.setTitle("Kidary");
         primaryStage.setScene(new Scene(root, 1300, 850));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
@@ -39,4 +50,28 @@ public class Calendar extends Application {
     public static void setMyVariable(String myVariable) {
         Calendar.name = myVariable;
     }
+
+    public static Data getData() {
+        return data;
+    }
+
+    public static void setData(Data data) {
+        Calendar.data = data;
+    }
+
+    public static Event getLastClicked() {
+        return lastClicked;
+    }
+
+    public static void setLastClicked(Event lastClicked) {
+        Calendar.lastClicked = lastClicked;
+    }
+    public static contactModel getCm() {
+        return cm;
+    }
+
+    public static void setCm(contactModel cm) {
+        Calendar.cm = cm;
+    }
+
 }

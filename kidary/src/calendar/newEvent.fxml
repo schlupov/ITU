@@ -18,6 +18,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
 <VBox prefHeight="900.0" prefWidth="650.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.createNewEventController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
@@ -136,49 +138,51 @@
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
                            <children>
-                              <JFXTextField />
+                              <JFXTextField fx:id="name" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <children>
-                              <JFXTextField />
+                              <JFXTextField fx:id="type" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <children>
-                              <JFXRadioButton text="Petr">
+                              <JFXRadioButton fx:id="petr" text="Petr">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
                               </JFXRadioButton>
-                              <JFXRadioButton text="Laura">
+                              <JFXRadioButton fx:id="laura" text="Laura">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
                               </JFXRadioButton>
-                              <JFXRadioButton text="Nina" />
+                              <JFXRadioButton fx:id="nina" text="Nina" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <children>
-                              <JFXTextField />
+                              <JFXTextField fx:id="contact" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                            <children>
-                              <DatePicker />
+                              <DatePicker  fx:id="date"/>
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                            <children>
-                              <JFXTextField />
+                              <DatePicker fx:id="from"/>
+                              <!--<JFXTimePicker fx:id="fromTime"></JFXTimePicker>-->
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                            <children>
-                              <JFXTextField />
+                              <DatePicker fx:id="to"/>
+                              <!--<JFXTimePicker fx:id="toTime" ></JFXTimePicker>-->
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                            <children>
-                              <JFXTextField />
+                              <JFXTextField fx:id="place" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
                            <children>
-                              <JFXTextArea />
+                              <JFXTextArea fx:id="note" />
                            </children></HBox>
                         <ColorPicker fx:id="colorPicker">
                            <opaqueInsets>

@@ -17,17 +17,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static calendar.Calendar.getCm;
+
 public class contactsController implements Initializable {
 //    @FXML
 //    public JFXButton buttonBack;
     @FXML
     public GridPane bodyGrid;
 
-    private contactModel cm;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cm = new contactModel();
         fillContacts();
 
 
@@ -49,19 +48,11 @@ public class contactsController implements Initializable {
         for (int i=0; i<4; i++){
             for (int j = 0; j<5; j++) {
 
-                Label text = new Label(cm.a[j][i]);
+                Label text = new Label(getCm().a[j][i]);
 
                 bodyGrid.add(text,i,j+1);
             }
         }
 
     }
-
-//    private void goBack(Stage window) throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("weekCalendar.fxml"));
-//        window.setScene(new Scene(root, 1300 ,850));
-//        window.setTitle("Kidary");
-//        window.show();
-//    }
-
 }
