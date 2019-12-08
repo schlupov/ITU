@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import calendar.Models.Event;
 import com.jfoenix.controls.*;
@@ -21,7 +21,7 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import static calendar.Kidary.getData;
+import static calendar.Controllers.Kidary.getData;
 
 public class createNewEventController implements Initializable {
     @FXML
@@ -111,7 +111,7 @@ public class createNewEventController implements Initializable {
     }
 
     private void goBack(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("weekCalendar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/weekCalendar.fxml"));
         window.setScene(new Scene(root, 1300 ,850));
         window.setTitle("Kidary");
         window.show();

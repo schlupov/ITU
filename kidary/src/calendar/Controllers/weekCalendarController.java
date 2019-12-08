@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import calendar.Models.Event;
 import com.jfoenix.controls.JFXButton;
@@ -23,13 +23,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Calendar;
 
-import static calendar.Kidary.setEventName;
-import static calendar.Kidary.getData;
-import static calendar.Kidary.setLastClicked;
+import static calendar.Controllers.Kidary.setEventName;
+import static calendar.Controllers.Kidary.getData;
+import static calendar.Controllers.Kidary.setLastClicked;
 
 public class weekCalendarController implements Initializable {
 
@@ -125,7 +124,7 @@ public class weekCalendarController implements Initializable {
         contacts.setOnAction(event -> {
             Stage stage = (Stage) backButton.getScene().getWindow();
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("contacts.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/contacts.fxml"));
                 Stage window = new Stage();
                 window.setTitle("Kidary");
                 window.setScene(new Scene(root, 650, 900));
@@ -138,7 +137,7 @@ public class weekCalendarController implements Initializable {
         messenger.setOnAction(event -> {
             Stage stage = (Stage) backButton.getScene().getWindow();
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("messenger.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/messenger.fxml"));
                 Stage window = new Stage();
                 window.setTitle("Kidary");
                 window.setScene(new Scene(root, 650, 950));
@@ -214,7 +213,7 @@ public class weekCalendarController implements Initializable {
             String whichDayInWeek = getDay(j);
             Label label = new Label(whichDayInWeek);
             label.setStyle("-fx-text-fill: BLACK;");
-            label.setStyle("-fx-font-size: 15px; -fx-font-weight: bold");
+            label.setStyle("-fx-font-size: 15px; -fx-font-weight: bold;");
             day.setPrefHeight(20);
             day.setMaxHeight(30);
             day.setStyle("-fx-background-color: #E1E2DC; -fx-min-height: 50px;");
@@ -252,7 +251,7 @@ public class weekCalendarController implements Initializable {
             setEventName(e.Name);
             try {
                 setLastClicked(e);
-                Parent root = FXMLLoader.load(getClass().getResource("eventDetail.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/eventDetail.fxml"));
                 Stage window = new Stage();
                 window.setTitle("Kidary");
                 window.setScene(new Scene(root, 450, 400));
@@ -290,7 +289,7 @@ public class weekCalendarController implements Initializable {
     }
 
     private void goBack(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("calendarDetail.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/calendarDetail.fxml"));
 
         window.setScene(new Scene(root, 1300, 850));
         window.setTitle("Kidary");
@@ -298,7 +297,7 @@ public class weekCalendarController implements Initializable {
     }
 
     private void newEvent(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("newEvent.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/newEvent.fxml"));
         window.setScene(new Scene(root, 650, 850));
         window.setTitle("Kidary");
         window.show();

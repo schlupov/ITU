@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.EventHandler;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static calendar.Kidary.getCm;
+import static calendar.Controllers.Kidary.getCm;
 
 public class contactsController implements Initializable {
 //    @FXML
@@ -40,7 +40,7 @@ public class contactsController implements Initializable {
             Stage stage = (Stage) buttonCreate.getScene().getWindow();
 
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("newContact.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/newContact.fxml"));
                 Stage window = new Stage();
                 window.setOnCloseRequest(new EventHandler<WindowEvent>() {
                     public void handle(WindowEvent we) {

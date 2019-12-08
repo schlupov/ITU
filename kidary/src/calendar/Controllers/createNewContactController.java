@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -13,7 +13,7 @@ import javafx.stage.WindowEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static calendar.Kidary.getCm;
+import static calendar.Controllers.Kidary.getCm;
 
 
 public class createNewContactController implements Initializable {

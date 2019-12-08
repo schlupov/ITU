@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.manageCalendarController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" stylesheets="@../../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.Controllers.manageCalendarController">
     <AnchorPane VBox.vgrow="ALWAYS">
-        <Pane id="PaneWelcome" fx:id="PaneWelcome" layoutX="410.0" layoutY="199.0" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../css/calendar.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Pane id="PaneWelcome" fx:id="PaneWelcome" layoutX="410.0" layoutY="199.0" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../../css/calendar.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <JFXButton fx:id="Petr" layoutX="418.0" layoutY="461.0" prefHeight="62.0" prefWidth="200.0" text="Petr" />
             <JFXButton fx:id="Laura" layoutX="693.0" layoutY="461.0" prefHeight="62.0" prefWidth="200.0" text="Laura" />
             <JFXButton fx:id="Nina" layoutX="418.0" layoutY="560.0" prefHeight="32.0" prefWidth="200.0" text="Nina" />
@@ -20,7 +20,7 @@
                <Font name="Cantarell Extra Bold" size="20.0" />
             </font></JFXButton>
             <ImageView fx:id="kidaryLogo" fitHeight="191.0" fitWidth="212.0" layoutX="554.0" layoutY="85.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
-                <Image url="@../css/pictures/logo.png" />
+                <Image url="@../../css/pictures/logo.png" />
             </ImageView>
          <Text fill="#2f2f2f" layoutX="435.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vítejte zpět v plánovači!">
             <font>
@@ -32,12 +32,12 @@
                <Font name="Cantarell Bold" size="20.0" />
             </font>
          </Text>
-         <JFXButton fx:id="add1" layoutX="645.0" layoutY="546.0" stylesheets="@../css/calendar.css" text="+" textFill="#7c7c7c">
+         <JFXButton fx:id="add1" layoutX="645.0" layoutY="546.0" stylesheets="@../../css/calendar.css" text="+" textFill="#7c7c7c">
             <font>
                <Font name="Cantarell Regular" size="44.0" />
             </font>
          </JFXButton>
-         <JFXButton id="showAll" fx:id="add2" layoutX="526.0" layoutY="681.0" prefHeight="43.0" prefWidth="247.0" stylesheets="@../css/calendar.css" text="Zobrazit vše">
+         <JFXButton id="showAll" fx:id="add2" layoutX="526.0" layoutY="681.0" prefHeight="43.0" prefWidth="247.0" stylesheets="@../../css/calendar.css" text="Zobrazit vše">
             <font>
                <Font name="Cantarell Extra Bold" size="20.0" />
             </font>

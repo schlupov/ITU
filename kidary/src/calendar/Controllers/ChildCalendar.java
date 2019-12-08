@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ public class ChildCalendar extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("childCalendar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/childCalendar.fxml"));
         primaryStage.setTitle("Kidary");
         primaryStage.setScene(new Scene(root, 400, 700));
         primaryStage.show();

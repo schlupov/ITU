@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -89,7 +89,7 @@ public class createNewCalendarController implements Initializable {
     }
 
     private void goBack(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("calendarDetail.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/calendarDetail.fxml"));
         window.setScene(new Scene(root, 1300, 850));
         window.setTitle("Kidary");
         window.show();

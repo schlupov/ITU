@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -21,7 +21,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import static calendar.Kidary.setEventName;
+import static calendar.Controllers.Kidary.setEventName;
 
 public class childCalendarController implements Initializable {
     @FXML
@@ -109,7 +109,7 @@ public class childCalendarController implements Initializable {
         calendarEvent.setOnMouseClicked(event -> {
             setEventName(subject);
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("eventDetail.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/eventDetail.fxml"));
                 Stage window = new Stage();
                 window.setTitle("Kidary");
                 window.setScene(new Scene(root, 450, 400));
@@ -123,7 +123,7 @@ public class childCalendarController implements Initializable {
     }
 
     private void gotoMessenger(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("childMessenger.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/childMessenger.fxml"));
         window.setScene(new Scene(root, 400, 700));
         window.setTitle("Kidary");
         window.show();

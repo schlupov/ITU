@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import calendar.Models.Message;
 import calendar.Models.messengerModel;

@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,7 +8,7 @@ import javafx.scene.layout.HBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static calendar.Kidary.getLastClicked;
+import static calendar.Controllers.Kidary.getLastClicked;
 
 
 public class eventDetailController implements Initializable {

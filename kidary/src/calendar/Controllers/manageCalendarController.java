@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import calendar.Models.User;
 import com.jfoenix.controls.JFXButton;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static calendar.Kidary.*;
+import static calendar.Controllers.Kidary.*;
 
 public class manageCalendarController implements Initializable {
     @FXML
@@ -36,7 +36,7 @@ public class manageCalendarController implements Initializable {
                 try {
                     Stage previousStage = (Stage) add.getScene().getWindow();
                     setPreviousStage(previousStage);
-                    Parent root = FXMLLoader.load(getClass().getResource("newCalendar.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/newCalendar.fxml"));
                     Stage window = new Stage();
                     window.setTitle("Kidary");
                     window.setScene(new Scene(root, 400, 300));
@@ -89,7 +89,7 @@ public class manageCalendarController implements Initializable {
     }
 
     private void getViewWeekCalendar(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("weekCalendar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/weekCalendar.fxml"));
         window.setScene(new Scene(root, 1300 ,850));
         window.setTitle("Kidary");
         window.show();

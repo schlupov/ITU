@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import calendar.Models.*;
 import javafx.application.Application;
@@ -26,7 +26,7 @@ public class Kidary extends Application {
         cm = new contactModel();
         new messengerModel().setData();
 
-        Parent root = FXMLLoader.load(getClass().getResource("calendar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/calendar.fxml"));
         primaryStage.setTitle("Kidary");
         primaryStage.setScene(new Scene(root, 1300, 850));
         primaryStage.show();

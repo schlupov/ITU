@@ -12,18 +12,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="500.0" prefWidth="800.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.LoginController">
+<VBox prefHeight="500.0" prefWidth="800.0" stylesheets="@../../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.Controllers.LoginController">
     <AnchorPane VBox.vgrow="ALWAYS">
-       <Pane id="loginCentralPane" fx:id="loginCentralPane" layoutY="-2.0" prefHeight="850.0" prefWidth="1300.0" stylesheets="@../css/calendar.css">
+       <Pane id="loginCentralPane" fx:id="loginCentralPane" layoutY="-2.0" prefHeight="850.0" prefWidth="1300.0" stylesheets="@../../css/calendar.css">
          <JFXTextField fx:id="username" layoutX="540.0" layoutY="407.0" />
            <ImageView fx:id="kidaryLogo" fitHeight="207.0" fitWidth="184.0" layoutX="560.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../css/pictures/logo.png" />
+               <Image url="@../../css/pictures/logo.png" />
            </ImageView>
-         <JFXButton id="createButton" fx:id="loginButton" layoutX="547.0" layoutY="713.0" prefHeight="34.0" prefWidth="223.0" stylesheets="@../css/calendar.css" text="Přihlásit" />
+         <JFXButton id="createButton" fx:id="loginButton" layoutX="547.0" layoutY="713.0" prefHeight="34.0" prefWidth="223.0" stylesheets="@../../css/calendar.css" text="Přihlásit" />
          <Text layoutX="554.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uživatel:" />
          <Text layoutX="554.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heslo:" />
          <CheckBox layoutX="538.0" layoutY="581.0" mnemonicParsing="false" text="Zapamatovat přihlášení" />
-         <JFXPasswordField id="password" layoutX="540.0" layoutY="518.0" stylesheets="@../css/calendar.css" />
+         <JFXPasswordField id="password" layoutX="540.0" layoutY="518.0" stylesheets="@../../css/calendar.css" />
          <Label fx:id="errorLabel" layoutX="570.0" layoutY="649.0" textFill="RED" />
        </Pane>
     </AnchorPane>

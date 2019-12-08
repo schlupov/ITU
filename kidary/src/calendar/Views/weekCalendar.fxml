@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" stylesheets="@../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.weekCalendarController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" stylesheets="@../../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.Controllers.weekCalendarController">
     <AnchorPane VBox.vgrow="ALWAYS">
         <SplitPane dividerPositions="0.1366120218579235" layoutX="155.0" layoutY="114.0" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -41,7 +41,7 @@
                               <padding>
                                  <Insets left="40.0" />
                               </padding></JFXButton>
-                           <JFXButton id="contacts" fx:id="contacts" prefWidth="150.0" stylesheets="@../css/calendar.css" text="Kontakty" textAlignment="RIGHT" />
+                           <JFXButton id="contacts" fx:id="contacts" prefWidth="150.0" stylesheets="@../../css/calendar.css" text="Kontakty" textAlignment="RIGHT" />
                         </children>
                      </VBox>
                      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
@@ -50,7 +50,7 @@
                               <font>
                                  <Font name="Cantarell Regular" size="16.0" />
                               </font></JFXTextField>
-                           <JFXTextField id="namedayText" fx:id="namedayText" alignment="CENTER" editable="false" stylesheets="@../css/calendar.css" text="1. Června (Petr)">
+                           <JFXTextField id="namedayText" fx:id="namedayText" alignment="CENTER" editable="false" stylesheets="@../../css/calendar.css" text="1. Června (Petr)">
                               <font>
                                  <Font name="Cantarell Regular" size="16.0" />
                               </font></JFXTextField>

@@ -1,4 +1,4 @@
-package calendar;
+package calendar.Controllers;
 
 import calendar.Models.Message;
 import calendar.Models.messengerModel;
@@ -94,7 +94,7 @@ public class childMessengerController implements Initializable {
     }
 
     private void goBack(Stage window) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("childCalendar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/calendar/Views/childCalendar.fxml"));
         window.setScene(new Scene(root, 400, 700));
         window.setTitle("Kidary");
         window.show();

@@ -5,5 +5,7 @@ module kidary {
     requires charm.glisten;
     requires com.jfoenix;
 
-    opens calendar;
+    opens calendar.Controllers;
+    opens calendar.Views;
+    opens calendar.Models;
 }
