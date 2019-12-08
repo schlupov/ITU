@@ -21,7 +21,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import static calendar.Calendar.setEventName;
+import static calendar.Kidary.setEventName;
 
 public class childCalendarController implements Initializable {
     @FXML
@@ -85,7 +85,7 @@ public class childCalendarController implements Initializable {
 
     private void addEvent( int time, String subject) {
         VBox calendarEvent = new VBox();
-        calendarEvent.setSpacing(8);
+        calendarEvent.setSpacing(5);
         calendarEvent.setPadding(new Insets(5, 5, 5, 5));
         switch (subject) {
             case "Angličtina":

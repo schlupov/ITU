@@ -1,18 +1,14 @@
 package calendar;
 
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTimePicker;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static calendar.Calendar.getLastClicked;
+import static calendar.Kidary.getLastClicked;
 
 
 public class eventDetailController implements Initializable {

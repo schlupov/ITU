@@ -1,5 +1,6 @@
 package calendar;
 
+import calendar.Models.User;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static calendar.Calendar.*;
+import static calendar.Kidary.*;
 
 public class manageCalendarController implements Initializable {
     @FXML
@@ -25,6 +25,8 @@ public class manageCalendarController implements Initializable {
     public JFXButton Petr;
     @FXML
     public VBox vboxNewUser;
+    @FXML
+    public JFXButton Nina;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -57,6 +59,11 @@ public class manageCalendarController implements Initializable {
                 }
             }
         });
+
+        User loggedUser = getLoggedUser();
+        if (loggedUser.username.equals("Petr")) {
+            Nina.setVisible(false);
+        }
 
         if (getNewCalendar() != null && !getNewCalendar().isEmpty()) {
             JFXButton button = new JFXButton(getNewCalendar());

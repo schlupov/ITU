@@ -152,9 +152,9 @@
                                  <children>
                                     <JFXButton fx:id="weekBack" prefHeight="55.0" prefWidth="55.0" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
                                     <JFXButton fx:id="weekForward" prefHeight="55.0" prefWidth="55.0" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
-                                    <Text fx:id="weekInfo" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                    <Text fx:id="weekInfo" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                        <font>
-                                          <Font name="Cantarell Regular" size="39.0" />
+                                          <Font size="39.0" />
                                        </font>
                                     </Text>
                                  </children>

@@ -42,8 +42,16 @@
     -fx-font-size: 20px;
 }
 
-#birthdayText, #namedayText {
+#namedayText {
     -fx-border-color: #2CA58D;
+}
+
+#birthdayText {
+    -fx-border-color: #2CA58D;
+    -fx-background-image: url("pictures/icons8-birthday-cake-50.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+    -fx-background-size: 25px;
 }
 
 #contacts, #backButton, #messenger {
@@ -54,10 +62,10 @@
 }
 
 #weekForward {
-    -fx-background-image: url("pictures/arrow-icon-28.png");
+    -fx-background-image: url("pictures/icons8-wide-long-right-arrow-64.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: left center;
-    -fx-background-size: 55px;
+    -fx-background-size: 35px;
 }
 
 #right {
@@ -68,10 +76,10 @@
 }
 
 #weekBack {
-    -fx-background-image: url("pictures/arrow-back.png");
+    -fx-background-image: url("pictures/icons8-wide-long-left-arrow-64.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: left center;
-    -fx-background-size: 55px;
+    -fx-background-size: 35px;
 }
 
 #left {

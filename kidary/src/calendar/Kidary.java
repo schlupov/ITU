@@ -1,16 +1,13 @@
 package calendar;
 
-import calendar.Models.Data;
-import calendar.Models.Event;
-import calendar.Models.contactModel;
-import calendar.Models.messengerModel;
+import calendar.Models.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Calendar extends Application {
+public class Kidary extends Application {
 
     private static String name;
     private static String eventName;
@@ -21,6 +18,7 @@ public class Calendar extends Application {
     private static String newCalendar;
     private static String birthday;
     private static Stage previousStage;
+    private static User loggedUser;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -41,22 +39,18 @@ public class Calendar extends Application {
     public static String getMyVariable() {
         return name;
     }
-    public static void setMyVariable(String myVariable) {
-        Calendar.name = myVariable;
-    }
+    public static void setMyVariable(String myVariable) { Kidary.name = myVariable; }
 
     public static String getEventName() {
         return eventName;
     }
-    public static void setEventName(String eventName) {
-        Calendar.eventName = eventName;
-    }
+    public static void setEventName(String eventName) { Kidary.eventName = eventName; }
 
     public static Data getData() {
         return data;
     }
     public static void setData(Data data) {
-        Calendar.data = data;
+        Kidary.data = data;
     }
 
     public static Event getLastClicked() {
@@ -64,28 +58,33 @@ public class Calendar extends Application {
     }
 
     public static void setLastClicked(Event lastClicked) {
-        Calendar.lastClicked = lastClicked;
+        Kidary.lastClicked = lastClicked;
     }
     public static contactModel getCm() {
         return cm;
     }
 
     public static void setCm(contactModel cm) {
-        Calendar.cm = cm;
+        Kidary.cm = cm;
     }
 
     public static String getNewCalendar() {
         return newCalendar;
     }
-    public static void setNewCalendar(String newCalendar) { Calendar.newCalendar = newCalendar;}
+    public static void setNewCalendar(String newCalendar) { Kidary.newCalendar = newCalendar;}
 
     public static String getBirthday() {
         return birthday;
     }
-    public static void setBirthday(String birthday) { Calendar.birthday = birthday;}
+    public static void setBirthday(String birthday) { Kidary.birthday = birthday;}
 
     public static Stage getPreviousStage() {
         return previousStage;
     }
-    public static void setPreviousStage(Stage previousStage) { Calendar.previousStage = previousStage;}
+    public static void setPreviousStage(Stage previousStage) { Kidary.previousStage = previousStage;}
+
+    public static User getLoggedUser() {
+        return loggedUser;
+    }
+    public static void setLoggedUser(User loggedUser) { Kidary.loggedUser = loggedUser;}
 }

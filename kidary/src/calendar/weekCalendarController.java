@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -22,12 +23,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.Calendar;
 
-import static calendar.Calendar.setEventName;
-import static calendar.Calendar.getData;
-import static calendar.Calendar.getLastClicked;
-import static calendar.Calendar.setLastClicked;
+import static calendar.Kidary.setEventName;
+import static calendar.Kidary.getData;
+import static calendar.Kidary.setLastClicked;
 
 public class weekCalendarController implements Initializable {
 
@@ -55,9 +57,12 @@ public class weekCalendarController implements Initializable {
     public JFXButton messenger;
     @FXML
     public JFXTextField birthdayText;
+    @FXML
+    public Text weekInfo;
 
     private LocalDate date = LocalDate.now();
     private LocalDate monday = null;
+    private int week;
 
 
     @Override
@@ -65,8 +70,15 @@ public class weekCalendarController implements Initializable {
         setName();
         setBirthday();
         setBPane();
+
+        Calendar cal = Calendar.getInstance();
+        this.week = cal.get(Calendar.WEEK_OF_YEAR);
+        weekInfo.setStyle("-fx-font-family: 'Accanthis ADF Std'");
+        createWeekInfo();
+
         createCalendarHeader();
         setContent();
+
 
         leftTopVBoxCalendar.setSpacing(8);
 
@@ -98,13 +110,15 @@ public class weekCalendarController implements Initializable {
 
         weekBack.setOnAction(event -> {
             date = date.minusWeeks(1);
-
+            this.week -= 1;
+            createWeekInfo();
             createCalendarHeader();
         });
 
         weekForward.setOnAction(event -> {
             date = date.plusWeeks(1);
-
+            this.week += 1;
+            createWeekInfo();
             createCalendarHeader();
         });
 
@@ -159,20 +173,20 @@ public class weekCalendarController implements Initializable {
 
     private void setName() {
         // nastavi jmeno na Petr, pokud uzivatel kliknul na tlacitko Petr
-        labelName.setText(labelName.getText() + Calendar.getMyVariable());
+        labelName.setText(labelName.getText() + Kidary.getMyVariable());
         labelName.setStyle("" +
                 "-fx-font-family: 'Helvetica', Arial, sans-serif;" +
                 " -fx-font-weight: bold; -fx-text-fill: white;" +
                 " -fx-font-size: 24px;"
         );
-        if (Calendar.getMyVariable().equals("Petr")) {
+        if (Kidary.getMyVariable().equals("Petr")) {
             birthdayText.setText("31.5, 25 let");
         }
     }
 
     private void setBirthday() {
-        if (!Calendar.getMyVariable().equals("Petr")) {
-            birthdayText.setText(Calendar.getBirthday());
+        if (!Kidary.getMyVariable().equals("Petr")) {
+            birthdayText.setText(Kidary.getBirthday());
         }
     }
 
@@ -194,12 +208,13 @@ public class weekCalendarController implements Initializable {
         for (int j = 0; j < 7; j++) {
 
             Label dateLabel = new Label(monday.toString());
-            dateLabel.setStyle("-fx-text-fill: BLACK; -fx-font-size: 20px;");
+            dateLabel.setStyle("-fx-text-fill: BLACK; -fx-font-size: 20px; -fx-font-family: 'Accanthis ADF Std'");
 
             VBox day = new VBox();
             String whichDayInWeek = getDay(j);
             Label label = new Label(whichDayInWeek);
             label.setStyle("-fx-text-fill: BLACK;");
+            label.setStyle("-fx-font-size: 15px; -fx-font-weight: bold");
             day.setPrefHeight(20);
             day.setMaxHeight(30);
             day.setStyle("-fx-background-color: #E1E2DC; -fx-min-height: 50px;");
@@ -211,8 +226,11 @@ public class weekCalendarController implements Initializable {
             calendarHeader.add(day, j + 1, 0);
 
             monday = monday.plusDays(1);
-
         }
+    }
+
+    private void createWeekInfo() {
+        weekInfo.setText(Integer.toString(this.week) + ". týden");
     }
 
 

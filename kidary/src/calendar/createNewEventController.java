@@ -21,7 +21,7 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import static calendar.Calendar.getData;
+import static calendar.Kidary.getData;
 
 public class createNewEventController implements Initializable {
     @FXML

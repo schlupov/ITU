@@ -5,7 +5,6 @@ import calendar.Models.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,13 +17,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.Map;
 
 
 public class LoginController implements Initializable {
@@ -72,6 +69,7 @@ public class LoginController implements Initializable {
 
     private boolean validateLogin(JFXTextField username, String password) {
         User loggedUser = new User(username.getText(), password);
+        Kidary.setLoggedUser(loggedUser);
         if (username.getText().isEmpty() || password.equals("")) {
             return false;
         }

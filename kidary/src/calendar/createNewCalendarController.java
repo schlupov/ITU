@@ -40,7 +40,7 @@ public class createNewCalendarController implements Initializable {
         createButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Calendar.setNewCalendar(nameTextField.getText());
+                Kidary.setNewCalendar(nameTextField.getText());
                 if (nameTextField.getText().isEmpty()) {
                     errorLabel.setStyle("-fx-text-fill: red");
                     errorLabel.setText("Jméno je nutné vyplnit!");
@@ -50,14 +50,17 @@ public class createNewCalendarController implements Initializable {
                     int age = calculateAge(birthDate, LocalDate.now());
                     String day = Integer.toString(birthDate.getDayOfMonth());
                     String month = Integer.toString(birthDate.getMonthValue());
-                    if (age > 0 && age <= 4) {
-                        Calendar.setBirthday(day + "." + month + ", " + Integer.toString(age) + " roky");
+                    if (age+1 == 1) {
+                        Kidary.setBirthday(day + "." + month + ", " + Integer.toString(age+1) + " rok");
+                    }
+                    else if (age+1 > 0 && age+1 <= 4) {
+                        Kidary.setBirthday(day + "." + month + ", " + Integer.toString(age+1) + " roky");
                     } else {
-                        Calendar.setBirthday(day + "." + month + ", " + Integer.toString(age) + " let");
+                        Kidary.setBirthday(day + "." + month + ", " + Integer.toString(age+1) + " let");
                     }
                 }
                 if (!nameTextField.getText().isEmpty()) {
-                    Stage previousStage = Calendar.getPreviousStage();
+                    Stage previousStage = Kidary.getPreviousStage();
                     previousStage.close();
                     Stage stage = (Stage) createButton.getScene().getWindow();
                     try {
