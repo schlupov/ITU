@@ -113,6 +113,7 @@ public class weekCalendarController implements Initializable {
             this.week -= 1;
             createWeekInfo();
             createCalendarHeader();
+            setContent();
         });
 
         weekForward.setOnAction(event -> {
@@ -120,6 +121,7 @@ public class weekCalendarController implements Initializable {
             this.week += 1;
             createWeekInfo();
             createCalendarHeader();
+            setContent();
         });
 
         contacts.setOnAction(event -> {
@@ -235,7 +237,7 @@ public class weekCalendarController implements Initializable {
 
 
     private void addEvent(GridPane gridPane, Event e) {
-        if (e.Id == 7 &&  e.Date.isAfter(monday) && e.Date.isBefore(date.plusDays(1)))
+        if (e.Id == 7 && this.week != 51)
         {
             return;
         }
