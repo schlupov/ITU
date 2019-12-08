@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Calendar;
 
@@ -234,6 +235,10 @@ public class weekCalendarController implements Initializable {
 
 
     private void addEvent(GridPane gridPane, Event e) {
+        if (e.Id == 7 &&  e.Date.isAfter(monday) && e.Date.isBefore(date.plusDays(1)))
+        {
+            return;
+        }
 
         int day;
         int time;
