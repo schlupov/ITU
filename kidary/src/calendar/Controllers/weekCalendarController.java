@@ -179,7 +179,7 @@ public class weekCalendarController implements Initializable {
                 " -fx-font-size: 24px;"
         );
         if (Kidary.getMyVariable().equals("Petr")) {
-            birthdayText.setText("31.5, 25 let");
+            birthdayText.setText("31.5, 8 let");
         }
     }
 
