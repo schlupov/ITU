@@ -5,8 +5,8 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,8 +19,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTimePicker?>
 <VBox prefHeight="900.0" prefWidth="650.0" stylesheets="@../../css/calendar.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.Controllers.createNewEventController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
@@ -171,11 +169,11 @@
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <children>
-                              <JFXTextField  fx:id="name" />
+                              <JFXTextField fx:id="name" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <children>
-                              <JFXTextField fx:id="type"/>
+                              <JFXTextField fx:id="type" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <children>
@@ -189,7 +187,7 @@
                                     <Insets right="10.0" />
                                  </HBox.margin>
                               </JFXRadioButton>
-                              <JFXRadioButton  fx:id="nina" text="Nina" />
+                              <JFXRadioButton fx:id="nina" text="Nina" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                            <children>
@@ -197,19 +195,17 @@
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                            <children>
-                              <DatePicker  fx:id="date"/>
+                              <DatePicker fx:id="date" />
 
                               <!--<JFXTimePicker fx:id="fromTime"></JFXTimePicker>-->
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                            <children>
-                              <DatePicker fx:id="from" />
-                              <!--<JFXTimePicker fx:id="toTime" ></JFXTimePicker>-->
+                              <ComboBox fx:id="From" prefWidth="150.0" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                            <children>
-                              <DatePicker fx:id="to"/>
-
+                              <ComboBox fx:id="To" prefWidth="150.0" />
                            </children></HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
                            <children>
