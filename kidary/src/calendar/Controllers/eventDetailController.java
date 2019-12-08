@@ -6,6 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 import static calendar.Controllers.Kidary.getLastClicked;
@@ -34,11 +36,13 @@ public class eventDetailController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
+
         nameOfEvent.setText(nameOfEvent.getText() + getLastClicked().Name);
         type.setText(getLastClicked().Type);
         date.setText(getLastClicked().Date.toString());
-        from.setText(getLastClicked().From.toString());
-        to.setText(getLastClicked().To.toString());
+        from.setText(dateFormat.format(getLastClicked().From));
+        to.setText(dateFormat.format(getLastClicked().To));
         place.setText(getLastClicked().Place);
         note.setText(getLastClicked().Note);
     }
