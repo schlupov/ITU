@@ -1,5 +1,7 @@
 package calendar;
 
+import calendar.Models.Credentials;
+import calendar.Models.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -20,7 +22,9 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Map;
 
 
 public class LoginController implements Initializable {
@@ -50,11 +54,7 @@ public class LoginController implements Initializable {
                         password = ((JFXPasswordField) node).getText();
                     }
                 }
-                if (username.getText().isEmpty() || password.equals("")) {
-                    errorLabel.setStyle("-fx-text-fill: red");
-                    errorLabel.setText("Špatné přihlašovací údaje!");
-                }
-                else if (!username.getText().equals("admin") || !password.equals("admin")) {
+                if (!validateLogin(username, password)) {
                     errorLabel.setStyle("-fx-text-fill: red");
                     errorLabel.setText("Špatné přihlašovací údaje!");
                 }
@@ -68,6 +68,26 @@ public class LoginController implements Initializable {
                 }
             }
         });
+    }
+
+    private boolean validateLogin(JFXTextField username, String password) {
+        User loggedUser = new User(username.getText(), password);
+        if (username.getText().isEmpty() || password.equals("")) {
+            return false;
+        }
+        else return validateCredentials(loggedUser);
+    }
+
+    private boolean validateCredentials(User user) {
+        Credentials credentials = new Credentials();
+        Map<String, String> credentialsMap = credentials.getCredentials();
+
+        for (String key : credentialsMap.keySet()) {
+            if (user.username.equals(key) && user.password.equals(credentialsMap.get(key))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void login(Stage window) throws IOException {
