@@ -1,3 +1,7 @@
+/**
+ * @file childCalendarController
+ * @author Michal Bucher, xbuche01
+ */
 package calendar.Controllers;
 
 import com.jfoenix.controls.JFXButton;

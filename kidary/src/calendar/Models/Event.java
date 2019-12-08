@@ -1,3 +1,7 @@
+/**
+ * @file Event
+ * @author Michal Bucher, xbuche01
+ */
 package calendar.Models;
 
 import java.time.LocalDate;

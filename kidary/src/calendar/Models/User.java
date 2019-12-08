@@ -1,3 +1,7 @@
+/**
+ * @file User
+ * @author Michal Bucher, xbuche01
+ */
 package calendar.Models;
 
 public class User {

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- @file eventDetail -->
+<!-- @author Ivana Saranová, xsaran02 -->
 
 <?import com.jfoenix.controls.JFXClippedPane?>
 <?import javafx.scene.control.Label?>

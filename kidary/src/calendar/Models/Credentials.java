@@ -1,3 +1,7 @@
+/**
+ * @file Credentials
+ * @author Silvie Chlupová, xchlup08
+ */
 package calendar.Models;
 
 import java.util.HashMap;
