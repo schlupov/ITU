@@ -1,3 +1,7 @@
+/**
+ * @file childMessengerController
+ * @author Michal Bucher, xbuche01
+ */
 package calendar.Controllers;
 
 import calendar.Models.Message;

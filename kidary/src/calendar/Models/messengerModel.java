@@ -1,3 +1,7 @@
+/**
+ * @file messengerModel
+ * @author Michal Bucher, xbuche01
+ */
 package calendar.Models;
 
 import java.io.*;

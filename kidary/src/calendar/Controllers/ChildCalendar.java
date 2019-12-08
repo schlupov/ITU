@@ -1,3 +1,7 @@
+/**
+ * @file ChildCalendar
+ * @author Michal Bucher, xbuche01
+ */
 package calendar.Controllers;
 
 import javafx.application.Application;

@@ -1,3 +1,7 @@
+/**
+ * @file weekCalendarController
+ * @author Silvie Chlupová, xchlup08
+ */
 package calendar.Controllers;
 
 import calendar.Models.Event;
