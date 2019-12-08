@@ -40,7 +40,7 @@ public class eventDetailController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
         nameOfEvent.setText(nameOfEvent.getText() + getLastClicked().Name);
         type.setText(getLastClicked().Type);
