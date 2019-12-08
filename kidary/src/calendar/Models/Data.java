@@ -20,6 +20,7 @@ public class Data {
         Event e4 = new Event();
         Event e5 = new Event();
         Event e6 = new Event();
+        Event e7 = new Event();
 
         e1.Id = 1;
         e1.Name = "Kostel";
@@ -81,7 +82,7 @@ public class Data {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        e6.Id = 3;
+        e6.Id = 6;
         e6.Name = "Matematika";
         e6.Calendar = 0;
         e6.Contacts = "777 239 999";
@@ -135,11 +136,33 @@ public class Data {
 
         e5.Color = "#002645";
 
+        formatter = new SimpleDateFormat("HH:mm");
+        try {
+            from = formatter.parse("13:00");
+            to = formatter.parse("14:00");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        e7.Id = 7;
+        e7.Name = "Fotbal";
+        e7.Calendar = 0;
+        e7.Contacts = "111 111 111";
+        e7.From = from;
+        e7.To = to;
+        e7.Date = LocalDate.of(2019, 12, 18);
+        e7.Place = "Brno Božetěchova 10";
+        e7.Note = "";
+        e7.Type = "družina";
+
+        e7.Color = "#FEDCBA";
+
         a.add(e1);
         a.add(e2);
         a.add(e3);
         a.add(e4);
         a.add(e5);
         a.add(e6);
+        a.add(e7);
+
     }
 }
