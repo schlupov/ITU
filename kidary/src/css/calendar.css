@@ -188,7 +188,7 @@
     -fx-background-color: #2CA58D;
 }
 
-#buttonRefresh {
+#buttonRefresh, #reload {
     -fx-background-image: url("pictures/refresh.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: left center;

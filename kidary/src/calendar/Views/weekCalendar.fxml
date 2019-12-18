@@ -39,7 +39,7 @@
                               <padding>
                                  <Insets left="30.0" />
                               </padding></JFXButton>
-                           <JFXButton fx:id="messenger" prefHeight="34.0" prefWidth="150.0" text="2 Nové zprávy" textAlignment="RIGHT">
+                           <JFXButton fx:id="messenger" prefHeight="34.0" prefWidth="150.0" text="Zprávy" textAlignment="RIGHT">
                               <padding>
                                  <Insets left="40.0" />
                               </padding></JFXButton>

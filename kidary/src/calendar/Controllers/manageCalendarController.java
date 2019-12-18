@@ -1,6 +1,6 @@
 /**
  * @file manageCalendarController
- * @author Silvie Chlupová, xchlup08
+ * @author Ivana Saranová, xsaran02
  */
 package calendar.Controllers;
 

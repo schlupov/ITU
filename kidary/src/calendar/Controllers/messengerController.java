@@ -1,6 +1,6 @@
 /**
  * @file messengerController
- * @author Michal Bucher, xbuche01
+ * @author Ivana Saranová, xsaran02
  */
 package calendar.Controllers;
 
